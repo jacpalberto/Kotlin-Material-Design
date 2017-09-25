@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Kotlin Material Design</string>
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
+
+    <!-- Menu Drawer-->
+    <string name="standard">Standard</string>
+    <string name="fibonacci">Fibonacci</string>
+    <string name="t_shirt">T-shirt</string>
+    <string name="settings">Settings</string>
+    <string name="about">About</string>
+    <string name="deck_type">Deck type</string>
+    <string name="components">Components</string>
+</resources>

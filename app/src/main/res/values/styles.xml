@@ -1,0 +1,55 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="CustomTabLayoutTheme" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="NavigationTheme" parent="AppTheme">
+        <item name="android:textSize">25sp</item>
+        <item name="listPreferredItemHeightSmall">50dp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="SwitchCompatTheme">
+        <item name="android:thumb">@drawable/custom_swcompat_thumb</item>
+        <item name="trackTint">@color/custom_track_swcompat</item>
+        <item name="showText">true</item>
+        <item name="android:textOn">yes</item>
+        <item name="android:textOff">no</item>
+    </style>
+
+    <style name="CheckBoxTheme" parent="Theme.AppCompat">
+        <item name="colorAccent">#1adc68</item>
+        <item name="android:textColorSecondary">#ff0000</item>
+    </style>
+
+    <style name="MyRadioButtonTwo" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:colorControlNormal" tools:targetApi="lollipop">#64dd17</item>
+        <item name="android:colorControlActivated" tools:targetApi="lollipop">#460745</item>
+        <item name="android:colorControlHighlight" tools:targetApi="lollipop">#c51162</item>
+        <item name="android:textColorPrimaryDisableOnly">#00838f</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat</item>
+    </style>
+</resources>
