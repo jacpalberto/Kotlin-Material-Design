@@ -18,15 +18,6 @@ class ComponentsActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        setupToolBar()
-        setupNavView()
     }
 
-    private fun setupNavView() {
-
-    }
-
-    private fun setupToolBar() {
-
-    }
 }

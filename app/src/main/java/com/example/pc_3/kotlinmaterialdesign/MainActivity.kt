@@ -2,6 +2,7 @@ package com.example.pc_3.kotlinmaterialdesign
 
 import android.os.Bundle
 import android.support.design.widget.NavigationView
+import android.support.design.widget.TabLayout
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
@@ -9,6 +10,7 @@ import android.view.Gravity
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_and_toolbar.*
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -21,6 +23,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private fun init() {
         setupToolBar()
         setupNavView()
+        setupViewPager()
+        setupTabLayout()
+    }
+
+    private fun setupViewPager() {
+        val mFragmentList = mutableListOf(DialogsFragment(), WidgetFragment())
+        mPager.adapter = PagerAdapter(supportFragmentManager, mFragmentList)
     }
 
     private fun setupNavView() {
@@ -38,7 +47,27 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private fun setupToolBar() {
         setSupportActionBar(toolbar)
         val actionBar = supportActionBar
-        actionBar?.title = "Scrum Poker"
+        actionBar?.title = "Kotlin Material Design"
+    }
+
+    private fun setupTabLayout() {
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.dialogs))
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.widgets))
+        tabLayout.tabGravity = TabLayout.GRAVITY_CENTER
+        mPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                mPager.currentItem = tab.position
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab) {
+
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab) {
+
+            }
+        })
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

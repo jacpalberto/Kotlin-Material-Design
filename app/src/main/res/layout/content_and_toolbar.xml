@@ -23,4 +23,25 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="@android:color/holo_blue_light"
+        android:elevation="0dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:tabIndicatorColor="#551122"
+        app:tabIndicatorHeight="5dp"
+        app:tabPaddingEnd="30dp"
+        app:tabPaddingStart="30dp"
+        app:tabSelectedTextColor="@android:color/black"
+        app:tabTextAppearance="@style/CustomTabLayoutTheme"
+        app:tabTextColor="@android:color/black" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/mPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tabLayout" />
 </RelativeLayout>

@@ -13,9 +13,9 @@
         android:id="@+id/etNavTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Scrum Pocker Tool"
+        android:text="Kotlin Material"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="20sp" />
 
     <TextView
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Qualtop Group"
-        android:textColor="@android:color/black"
+        android:text="Design"
+        android:textColor="@android:color/white"
         android:textSize="17sp" />
 </LinearLayout>
