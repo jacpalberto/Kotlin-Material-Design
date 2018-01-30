@@ -96,10 +96,29 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/llSnackbar"
+            android:id="@+id/llCustomToast"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/llToast"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/btnCustomToast"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:backgroundTint="@android:color/white"
+                android:text="@string/custom_toast"
+                android:textColor="@color/purple" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llSnackbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llCustomToast"
             android:layout_marginTop="5dp"
             android:gravity="center"
             android:weightSum="1">
@@ -149,6 +168,158 @@
                 android:layout_weight=".8"
                 android:backgroundTint="@android:color/white"
                 android:text="@string/custom_notification"
+                android:textColor="@color/purple" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llRichNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llCustomNotification"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/btnRichNotification"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:backgroundTint="@android:color/white"
+                android:text="@string/rich_notification"
+                android:textColor="@color/purple" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llPictureNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llRichNotification"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/btnPictureNotification"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:backgroundTint="@android:color/white"
+                android:text="@string/picture_notification"
+                android:textColor="@color/purple" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llInboxNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llPictureNotification"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/btnInboxNotification"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:backgroundTint="@android:color/white"
+                android:text="@string/Inbox_notification"
+                android:textColor="@color/purple" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llMessagingNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llInboxNotification"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/btnMessagingNotification"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:backgroundTint="@android:color/white"
+                android:text="@string/messaging_notification"
+                android:textColor="@color/purple" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llActionNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llMessagingNotification"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/btnActionNotification"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:backgroundTint="@android:color/white"
+                android:text="@string/action_notification"
+                android:textColor="@color/purple" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llProgressNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llActionNotification"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/btnProgressNotification"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:backgroundTint="@android:color/white"
+                android:text="@string/progress_notification"
+                android:textColor="@color/purple" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llCustomBigNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llProgressNotification"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/btnCustomBigNotification"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:backgroundTint="@android:color/white"
+                android:text="@string/custom_big_notification"
+                android:textColor="@color/purple" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llGroupNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llCustomBigNotification"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/btnGroupNotification"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:backgroundTint="@android:color/white"
+                android:text="@string/group_notification"
                 android:textColor="@color/purple" />
         </LinearLayout>
     </RelativeLayout>

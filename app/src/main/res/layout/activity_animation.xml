@@ -3,117 +3,169 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.example.pc_3.kotlinmaterialdesign.AnimationActivity">
 
-    <include layout="@layout/toolbar" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <LinearLayout
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/toolbar" />
+
+            <LinearLayout
+                android:id="@+id/llButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <Button
+                        android:id="@+id/btnToLeft"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".9"
+                        android:backgroundTint="@color/dark_blue"
+                        android:text="@string/animation_to_left"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <Button
+                        android:id="@+id/btnToRight"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".9"
+                        android:backgroundTint="@color/blue"
+                        android:text="@string/animation_to_right"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <Button
+                        android:id="@+id/btnFade"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".9"
+                        android:backgroundTint="@color/cyan"
+                        android:text="@string/animation_fading"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <Button
+                        android:id="@+id/btnInstant"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".9"
+                        android:backgroundTint="@color/tourquese"
+                        android:text="@string/instant_animation"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <Button
+                        android:id="@+id/btnRegular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".9"
+                        android:backgroundTint="@color/green"
+                        android:text="@string/regular_animation"
+                        android:textColor="@android:color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <Button
+                        android:id="@+id/btnToDown"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".9"
+                        android:backgroundTint="@color/yellow"
+                        android:clickable="true"
+                        android:elevation="4dp"
+                        android:focusable="true"
+                        android:text="@string/vertical_animation"
+                        android:textColor="@android:color/white" />
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/fillScreenButton"
+                    android:layout_width="300dp"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/fill_animation_button"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground">
+
+                    <TextView
+                        android:id="@+id/buttonTitleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/fill_screen_animation"
+                        android:textAllCaps="true"
+                        android:textColor="#ffffff" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:visibility="invisible" />
+                </FrameLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/revealView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:weightSum="1">
-
-            <Button
-                android:id="@+id/btnToLeft"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".9"
-                android:background="@color/dark_blue"
-                android:text="@string/animation_to_left"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:weightSum="1">
-
-            <Button
-                android:id="@+id/btnToRight"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".9"
-                android:background="@color/blue"
-                android:text="@string/animation_to_right"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:weightSum="1">
-
-            <Button
-                android:id="@+id/btnFade"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".9"
-                android:background="@color/cyan"
-                android:text="@string/animation_fading"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:weightSum="1">
-
-            <Button
-                android:id="@+id/btnInstant"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".9"
-                android:background="@color/tourquese"
-                android:text="@string/instant_animation"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:weightSum="1">
-
-            <Button
-                android:id="@+id/btnRegular"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".9"
-                android:background="@color/green"
-                android:text="@string/regular_animation"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:weightSum="1">
-
-            <Button
-                android:id="@+id/btnToDown"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".9"
-                android:background="@color/yellow"
-                android:text="@string/vertical_animation"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-    </LinearLayout>
+        android:background="@color/red"
+        android:visibility="invisible" />
 </RelativeLayout>
+

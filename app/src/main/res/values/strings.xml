@@ -68,4 +68,17 @@
     <string name="done">DONE</string>
     <string name="last_message">Last message:</string>
     <string name="custom_notification">Custom notification</string>
+    <string name="fill_screen_animation">Fill screen animation</string>
+    <string name="rich_notification">Rich notification</string>
+    <string name="lorem_paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse posuere mattis dapibus. Donec a nunc mattis, pulvinar dui vel, aliquam dui. In nec ante nec enim vehicula consectetur. Mauris justo lorem, rutrum eu ornare ac, faucibus vel velit. Integer felis.</string>
+    <string name="picture_notification">Picture notification</string>
+    <string name="your_picture">Your picture:</string>
+    <string name="new_inboxs">You have new %s inbox</string>
+    <string name="Inbox_notification">Inbox notification</string>
+    <string name="messaging_notification">Messaging notification</string>
+    <string name="action_notification">Action notification</string>
+    <string name="progress_notification">Progress notification</string>
+    <string name="custom_big_notification">Custom big notification</string>
+    <string name="group_notification">Group notification</string>
+    <string name="custom_toast">Custom toast</string>
 </resources>
