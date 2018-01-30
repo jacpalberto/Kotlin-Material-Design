@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_standard"
+        android:icon="@android:drawable/ic_dialog_alert"
+        android:title="@string/standard" />
+    <item
+        android:id="@+id/menu_recycler"
+        android:icon="@android:drawable/ic_dialog_map"
+        android:title="@string/fibonacci" />
+    <item
+        android:id="@+id/menu_scrolling"
+        android:icon="@android:drawable/ic_lock_idle_alarm"
+        android:title="@string/scrolling"
+        android:visible="true" />
+    <item
+        android:id="@+id/menu_activity_animations"
+        android:icon="@android:drawable/ic_lock_idle_alarm"
+        android:title="@string/activity_animations"
+        android:visible="true" />
 
-
-            <item
-                android:id="@+id/menu_standard"
-                android:icon="@android:drawable/ic_dialog_alert"
-                android:title="@string/standard" />
-            <item
-                android:id="@+id/menu_fibonacci"
-                android:icon="@android:drawable/ic_dialog_map"
-                android:title="@string/fibonacci" />
-            <item
-                android:id="@+id/menu_tshirt"
-                android:icon="@android:drawable/ic_lock_idle_alarm"
-                android:title="@string/t_shirt"
-                android:visible="true" />
-
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/menu_components"
-            android:icon="@android:drawable/ic_menu_set_as"
-            android:title="@string/components" />
-        <item
-            android:id="@+id/menu_about"
-            android:icon="@android:drawable/ic_dialog_info"
-            android:title="@string/about" />
-    </group>
-
+    <item
+        android:id="@+id/menu_components"
+        android:icon="@android:drawable/ic_menu_set_as"
+        android:title="@string/components" />
+    <item
+        android:id="@+id/menu_about"
+        android:icon="@android:drawable/ic_dialog_info"
+        android:title="@string/about" />
 
 </menu>

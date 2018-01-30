@@ -12,8 +12,7 @@
     <string name="deck_type">Elements</string>
     <string name="components">Components</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Dialog Fragment -->
     <string name="simple_dialog">Simple Dialog</string>
     <string name="buttons_dialog">Buttons Dialog</string>
     <string name="simple_choice_dialog">Simple Choice Dialog</string>
@@ -25,6 +24,48 @@
     <string name="bottom_dialog">Bottom Dialog</string>
     <string name="full_screen_dialog">Full Screen Dialog</string>
     <string name="custom_fragment_dialog">Custom Fragment Dialog</string>
+
+    <string name="lorem">Lorem ipsum dolor sit amet, leo ipsam, venenatis convallis cursus. A sed mattis, erat id, qui ac pede. Donec morbi urna, aliquam donec rhoncus. Massa pellentesque, urna iusto, sed dignissim. Placerat erat odio, molestie augue, mauris eget eu. Viverra id.</string>
+    <string name="main_dialog_single_choice">Single choice dialog</string>
+    <string name="main_dialog_simple_title">A simple dialog</string>
+    <string-array name="dialog_choice_array">
+        <item>Pizza</item>
+        <item>Hamburger</item>
+        <item>Wings</item>
+        <item>Ribs</item>
+    </string-array>
+
     <string name="dialogs">dialogs</string>
     <string name="widgets">widgets</string>
+    <string name="activity_animations">Activity Animations</string>
+    <string name="animation_to_left">Animation to left</string>
+    <string name="animation_to_right">Animation to right</string>
+    <string name="animation_fading">Fading animation</string>
+    <string name="instant_animation">Instant animation</string>
+    <string name="regular_animation">Regular animation</string>
+    <string name="vertical_animation">Vertical animation</string>
+
+    <!-- General -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="neutral">neutral</string>
+    <string name="main_dialog_multi_choice">Multi choice dialog</string>
+    <string name="main_dialog_progress_title">Progress dialog</string>
+    <string name="main_dialog_fullscreen">Fullscreen dialog</string>
+    <string name="scrolling">Scrolling</string>
+    <string name="lorem_large">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit tellus vel consequat pretium. Vivamus non elit hendrerit, iaculis sapien non, dignissim quam. Vivamus nec porttitor erat. Aenean pellentesque lorem eget magna ornare, sit amet consectetur ex tempus. In risus nulla, sodales sed consectetur non, consectetur sed justo. Fusce tempus, dolor sed placerat ullamcorper, diam ex bibendum ante, in efficitur velit lacus ac turpis. Aenean et turpis interdum, egestas tortor sit amet, accumsan eros. In bibendum sollicitudin auctor. Duis malesuada urna vitae nibh rutrum suscipit. Nullam commodo aliquet lacinia. Fusce orci erat, fermentum eu nulla quis, tincidunt pellentesque odio. Vestibulum finibus, dui vel blandit imperdiet, sem arcu pretium ex, ut vestibulum massa urna ac diam. Vivamus cursus sem vitae laoreet gravida. Pellentesque laoreet massa sit amet ante pulvinar, quis finibus dolor semper. Donec aliquet ex viverra quam eleifend, sit amet facilisis arcu cursus. Aenean in ultrices lorem. Quisque gravida, sem vel hendrerit imperdiet, sem massa luctus sem, ac pellentesque purus eros vel arcu. Curabitur mi nulla, rutrum ac vestibulum id, luctus vel enim. Pellentesque vitae libero aliquam lorem mattis hendrerit sit amet sed quam. In in faucibus justo, eu efficitur tellus. Aenean a molestie sapien. Quisque condimentum blandit ligula vitae tempor. Vestibulum vel condimentum dolor. Vestibulum elit dui, ornare in mi ut, ultricies rhoncus purus. Praesent sed sagittis velit. Nullam neque nulla, bibendum et suscipit vel, porttitor quis risus. Nunc accumsan velit purus, sed molestie sapien finibus ac. Duis sed ultricies nisl. Duis sed consequat dolor, quis pretium nulla. Ut ac ornare nisi. Phasellus iaculis massa sem, id sodales mauris maximus eget. Duis quis venenatis diam. Integer euismod nunc ex, sed consectetur tortor faucibus eu. Praesent maximus id augue vel vehicula. Quisque semper nibh non nulla facilisis laoreet. Vivamus vitae consequat erat. Etiam non justo imperdiet augue aliquet ultrices id suscipit arcu. Suspendisse pellentesque at mi non lacinia. Ut dapibus at tortor et facilisis. Maecenas rhoncus turpis elit, accumsan dictum justo efficitur vel. Aenean at aliquet massa. Nulla semper feugiat nulla nec pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras in leo malesuada, commodo augue eget, sodales metus. Proin id nulla vel massa interdum accumsan non in odio. Integer ac interdum neque. Donec sit amet arcu lectus. Curabitur et ligula iaculis, ullamcorper tellus eget, elementum nisi. Nulla dignissim lacus maximus lorem bibendum pharetra. Nunc hendrerit interdum est, eu laoreet lectus ullamcorper ut. Quisque nec ipsum cursus, sagittis nisl at, imperdiet odio. Pellentesque efficitur feugiat elit sit amet luctus. Phasellus venenatis volutpat sollicitudin. Curabitur eleifend ante eu ipsum fermentum pulvinar. Ut ac eros sit amet nibh condimentum suscipit id ut arcu. Sed porta accumsan lectus at luctus. Morbi sit amet libero leo. Sed eu ex vel ligula tempus varius. Integer imperdiet mi eget pulvinar iaculis. Aenean eu erat eu metus ultrices venenatis. In ut sodales neque, vel mollis lacus. Aliquam imperdiet augue nec purus ultricies, vitae imperdiet libero consequat. Nunc id malesuada turpis, at fringilla turpis. Integer at metus nec ligula sollicitudin fermentum. Aenean at posuere nisl. Aenean turpis nisi, rhoncus feugiat mattis a, commodo sollicitudin ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</string>
+    <string name="share_with">Share with</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="messages">Messages</string>
+    <string name="kotlin_material">Kotlin Material</string>
+    <string name="design">Design</string>
+    <string name="message">Message</string>
+    <string name="Toast">Toast</string>
+    <string name="snackbar">Snackbar</string>
+    <string name="notification">Notification</string>
+    <string name="text_not_null">Message cannot be empty</string>
+    <string name="done">DONE</string>
+    <string name="last_message">Last message:</string>
+    <string name="custom_notification">Custom notification</string>
 </resources>

@@ -16,34 +16,37 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="Checkboxes"
             android:textColor="#2d8fff"
             android:textSize="18sp" />
 
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="20dp"
+            android:background="@android:color/white"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:checked="true"
+            android:gravity="center"
+            android:text="CheckedTextView"
+            android:textAlignment="center" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="horizontal"
-            android:padding="10dp">
-
-
-            <android.support.v7.widget.AppCompatCheckedTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/white"
-                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
-                android:checked="true"
-                android:gravity="center"
-                android:text="CheckedTextView"
-                android:textAlignment="center" />
+            android:paddingBottom="10dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
                 android:background="@android:color/white"
                 android:text="checkBox" />
 
@@ -57,11 +60,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="horizontal"
             android:paddingBottom="10dp"
             android:paddingEnd="10dp"
-            android:paddingStart="10dp">
+            android:paddingStart="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -74,11 +76,19 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:background="@android:color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
                 android:background="@android:color/white"
                 android:text="Custom ACCheckBox" />
 
@@ -90,5 +100,4 @@
                 android:theme="@style/CheckBoxTheme" />
         </LinearLayout>
     </LinearLayout>
-
 </android.support.v7.widget.CardView>

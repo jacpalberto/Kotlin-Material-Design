@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
-    android:background="@drawable/side_nav_bar"
+    android:layout_height="180dp"
+    android:background="@drawable/img_bgnd_header"
+    android:fitsSystemWindows="true"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-
     <TextView
         android:id="@+id/etNavTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kotlin Material"
+        android:text="@string/kotlin_material"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="@android:color/white"
-        android:textSize="20sp" />
+        android:textColor="@android:color/black"
+        android:textSize="23sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Design"
-        android:textColor="@android:color/white"
-        android:textSize="17sp" />
+        android:text="@string/design"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 </LinearLayout>

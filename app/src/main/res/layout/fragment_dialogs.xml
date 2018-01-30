@@ -1,18 +1,20 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.pc_3.kotlinmaterialdesign.DialogsFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:id="@+id/llSimpleDialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="13dp"
             android:gravity="center"
             android:weightSum="1">
 
@@ -21,7 +23,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".9"
-                android:background="#e73707"
+                android:backgroundTint="@color/red"
                 android:text="@string/simple_dialog"
                 android:textColor="@android:color/white" />
         </LinearLayout>
@@ -31,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/llSimpleDialog"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="13dp"
             android:gravity="center"
             android:weightSum="1">
 
@@ -40,7 +42,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".9"
-                android:background="#e70759"
+                android:backgroundTint="@color/magenta"
                 android:text="@string/buttons_dialog"
                 android:textColor="@android:color/white" />
         </LinearLayout>
@@ -50,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/llButtonsDialog"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="13dp"
             android:gravity="center"
             android:weightSum="1">
 
@@ -59,7 +61,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".9"
-                android:background="#6910e7"
+                android:backgroundTint="@color/purple"
                 android:text="@string/simple_choice_dialog"
                 android:textColor="@android:color/white" />
         </LinearLayout>
@@ -69,7 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/llSimpleChoiceDialog"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="13dp"
             android:gravity="center"
             android:weightSum="1">
 
@@ -78,7 +80,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".9"
-                android:background="#0b04ec"
+                android:backgroundTint="@color/dark_blue"
                 android:text="@string/multi_choice_dialog"
                 android:textColor="@android:color/white" />
         </LinearLayout>
@@ -88,7 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/llMultiChoiceDialog"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="13dp"
             android:gravity="center"
             android:weightSum="1">
 
@@ -97,7 +99,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".9"
-                android:background="#0469ec"
+                android:backgroundTint="@color/blue"
                 android:text="@string/progress_dialog"
                 android:textColor="@android:color/white" />
         </LinearLayout>
@@ -107,7 +109,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/llProgressDialog"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="13dp"
             android:gravity="center"
             android:weightSum="1">
 
@@ -116,7 +118,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".9"
-                android:background="#04d1ec"
+                android:backgroundTint="@color/cyan"
                 android:text="@string/progress_bar_dialog"
                 android:textColor="@android:color/white" />
         </LinearLayout>
@@ -126,7 +128,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/llProgressBarDialog"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="13dp"
             android:gravity="center"
             android:weightSum="1">
 
@@ -135,7 +137,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".9"
-                android:background="#04ec93"
+                android:backgroundTint="@color/tourquese"
                 android:text="@string/date_picker_dialog"
                 android:textColor="@android:color/white" />
         </LinearLayout>
@@ -145,7 +147,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/llDatePickerDialog"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="13dp"
             android:gravity="center"
             android:weightSum="1">
 
@@ -154,7 +156,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".9"
-                android:background="#2bec04"
+                android:backgroundTint="@color/green"
                 android:text="@string/time_picker_dialog"
                 android:textColor="@android:color/white" />
         </LinearLayout>
@@ -164,7 +166,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/llTimePickerDialog"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="13dp"
             android:gravity="center"
             android:weightSum="1">
 
@@ -173,7 +175,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".9"
-                android:background="#ece804"
+                android:backgroundTint="@color/yellow"
                 android:text="@string/bottom_dialog"
                 android:textColor="@android:color/white" />
         </LinearLayout>
@@ -183,7 +185,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/llBottomDialog"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="13dp"
             android:gravity="center"
             android:weightSum="1">
 
@@ -192,7 +194,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".9"
-                android:background="#ec9b04"
+                android:backgroundTint="@color/orange"
                 android:text="@string/full_screen_dialog"
                 android:textColor="@android:color/white" />
         </LinearLayout>
@@ -202,7 +204,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/llFullScreenDialog"
-            android:layout_marginTop="20dp"
+            android:layout_marginBottom="13dp"
+            android:layout_marginTop="13dp"
             android:gravity="center"
             android:weightSum="1">
 
@@ -211,9 +214,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".9"
-                android:background="#ec1704"
+                android:backgroundTint="@color/red"
                 android:text="@string/custom_fragment_dialog"
                 android:textColor="@android:color/white" />
         </LinearLayout>
     </RelativeLayout>
-</ScrollView>
+</android.support.v4.widget.NestedScrollView>

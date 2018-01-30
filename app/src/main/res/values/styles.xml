@@ -14,13 +14,26 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="DialogFullscreen" parent="@android:style/Theme.Material.Light.DialogWhenLarge">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+    </style>
+
     <style name="CustomTabLayoutTheme" parent="TextAppearance.Design.Tab">
-        <item name="android:textSize">17sp</item>
+        <item name="android:textSize">15sp</item>
     </style>
 
     <style name="NavigationTheme" parent="AppTheme">
         <item name="android:textSize">25sp</item>
         <item name="listPreferredItemHeightSmall">50dp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBarTransparent">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -42,7 +55,11 @@
 
     <style name="CheckBoxTheme" parent="Theme.AppCompat">
         <item name="colorAccent">#1adc68</item>
-        <item name="android:textColorSecondary">#ff0000</item>
+    </style>
+
+    <style name="CheckBoxThemeLight" parent="Theme.AppCompat">
+        <item name="colorAccent">#1adc68</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
     </style>
 
     <style name="MyRadioButtonTwo" parent="Widget.AppCompat.CompoundButton.RadioButton">
@@ -52,4 +69,13 @@
         <item name="android:textColorPrimaryDisableOnly">#00838f</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat</item>
     </style>
+
+    <style name="AppTheme.Events" parent="AppTheme" >
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowEnterTransition">@transition/enter_event</item>
+        <item name="android:windowExitTransition">@null</item>
+        <item name="android:windowReturnTransition">@null</item>
+        <item name="android:windowExitAnimation">@null</item>
+    </style>
+
 </resources>
