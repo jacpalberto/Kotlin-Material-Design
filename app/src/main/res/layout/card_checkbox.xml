@@ -23,7 +23,6 @@
             android:textColor="#2d8fff"
             android:textSize="18sp" />
 
-
         <android.support.v7.widget.AppCompatCheckedTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:background="@drawable/messages_bckgnd">
 
-
     <ImageView
         android:id="@+id/alertImageView"
         android:layout_width="60dp"

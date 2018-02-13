@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="180dp"
-    android:background="@drawable/img_bgnd_header"
+    android:background="@drawable/img_bgnd"
     android:fitsSystemWindows="true"
     android:gravity="center"
     android:orientation="vertical"
@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:text="@string/kotlin_material"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="23sp"
         android:textStyle="bold" />
 
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/design"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
 </LinearLayout>

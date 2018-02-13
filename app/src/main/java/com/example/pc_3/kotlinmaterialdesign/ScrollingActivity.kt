@@ -1,13 +1,10 @@
 package com.example.pc_3.kotlinmaterialdesign
 
-import android.content.Intent
-import android.content.res.Configuration
-import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.view.WindowManager
 import kotlinx.android.synthetic.main.activity_scrolling.*
-
+import org.jetbrains.anko.sdk15.listeners.onClick
+import org.jetbrains.anko.share
 
 class ScrollingActivity : AppCompatActivity() {
 
@@ -20,16 +17,11 @@ class ScrollingActivity : AppCompatActivity() {
     private fun init() {
         setupToolBar()
         setupFab()
-        //window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
     }
 
     private fun setupFab() {
-        scrollingFab.setOnClickListener {
-            val intent = Intent()
-            intent.action = Intent.ACTION_SEND
-            intent.putExtra(Intent.EXTRA_TEXT,"App developed by Alberto Carrillo")
-            intent.type = "text/plain"
-            startActivity(Intent.createChooser(intent, getString(R.string.share_with)))
+        scrollingFab.onClick {
+            share("App developer by Alberto Carrillo","Send to")
         }
     }
 

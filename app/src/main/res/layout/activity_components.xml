@@ -25,6 +25,6 @@
         <include layout="@layout/card_radio_button" />
 
         <include layout="@layout/card_progress_bar" />
-    </LinearLayout>
 
+    </LinearLayout>
 </ScrollView>

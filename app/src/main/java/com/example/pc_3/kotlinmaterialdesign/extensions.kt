@@ -1,18 +1,14 @@
 package com.example.pc_3.kotlinmaterialdesign
 
-import android.app.Activity
 import android.app.Notification
 import android.app.NotificationManager
 import android.content.ContentValues.TAG
 import android.content.Context
-import android.content.Intent
 import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.media.RingtoneManager
-import android.os.Bundle
-import android.support.annotation.LayoutRes
 import android.support.design.widget.CoordinatorLayout
 import android.support.design.widget.Snackbar
 import android.support.v4.app.NotificationCompat
@@ -20,7 +16,6 @@ import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.RemoteViews
 import android.widget.TextView
 import android.widget.Toast
@@ -35,20 +30,6 @@ var inboxStyle = NotificationCompat.InboxStyle()
 const val NOTIFICATION_ID = 237
 private var counter = 1
 private var value = 0
-
-//ACTIVITY EXTENSIONS
-inline fun <reified T : Any> Activity.launchActivity(
-        requestCode: Int = -1,
-        options: Bundle? = null,
-        noinline init: Intent.() -> Unit = {}) {
-
-    val intent = newIntent<T>(this)
-    intent.init()
-    startActivityForResult(intent, requestCode, options)
-}
-
-inline fun <reified T : Any> newIntent(context: Context): Intent =
-        Intent(context, T::class.java)
 
 fun Context.toast(message: String, duration: Int = Toast.LENGTH_SHORT) {
     Toast.makeText(this, message, duration).show()

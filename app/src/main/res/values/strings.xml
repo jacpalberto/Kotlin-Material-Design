@@ -81,4 +81,8 @@
     <string name="custom_big_notification">Custom big notification</string>
     <string name="group_notification">Group notification</string>
     <string name="custom_toast">Custom toast</string>
+    <string name="messages_field_random_text_color">Random text color</string>
+    <string name="messages_field_random_background_color">Random background</string>
+    <string name="messages_field_random_position">Random position</string>
+    <string name="explode_animation">Explode animation</string>
 </resources>

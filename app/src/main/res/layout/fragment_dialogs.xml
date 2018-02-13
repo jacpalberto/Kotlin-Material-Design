@@ -6,217 +6,154 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.pc_3.kotlinmaterialdesign.DialogsFragment">
 
-    <RelativeLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp">
 
-        <LinearLayout
-            android:id="@+id/llSimpleDialog"
-            android:layout_width="match_parent"
+        <android.support.constraint.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            android:gravity="center"
-            android:weightSum="1">
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
 
-            <Button
-                android:id="@+id/btnSimpleDialog"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".9"
-                android:backgroundTint="@color/red"
-                android:text="@string/simple_dialog"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/llButtonsDialog"
-            android:layout_width="match_parent"
+        <android.support.constraint.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/llSimpleDialog"
-            android:layout_marginTop="13dp"
-            android:gravity="center"
-            android:weightSum="1">
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
 
-            <Button
-                android:id="@+id/btnButtonsDialog"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".9"
-                android:backgroundTint="@color/magenta"
-                android:text="@string/buttons_dialog"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/llSimpleChoiceDialog"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btnSimpleDialog"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/llButtonsDialog"
-            android:layout_marginTop="13dp"
-            android:gravity="center"
-            android:weightSum="1">
+            android:backgroundTint="@color/red"
+            android:text="@string/simple_dialog"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart" />
 
-            <Button
-                android:id="@+id/btnSimpleChoiceDialog"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".9"
-                android:backgroundTint="@color/purple"
-                android:text="@string/simple_choice_dialog"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/llMultiChoiceDialog"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btnButtonsDialog"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/llSimpleChoiceDialog"
-            android:layout_marginTop="13dp"
-            android:gravity="center"
-            android:weightSum="1">
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/magenta"
+            android:text="@string/buttons_dialog"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/btnSimpleDialog" />
 
-            <Button
-                android:id="@+id/btnMultiChoiceDialog"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".9"
-                android:backgroundTint="@color/dark_blue"
-                android:text="@string/multi_choice_dialog"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/llProgressDialog"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btnSimpleChoiceDialog"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/llMultiChoiceDialog"
-            android:layout_marginTop="13dp"
-            android:gravity="center"
-            android:weightSum="1">
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/purple"
+            android:text="@string/simple_choice_dialog"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/btnButtonsDialog" />
 
-            <Button
-                android:id="@+id/btnProgressDialog"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".9"
-                android:backgroundTint="@color/blue"
-                android:text="@string/progress_dialog"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/llProgressBarDialog"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btnMultiChoiceDialog"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/llProgressDialog"
-            android:layout_marginTop="13dp"
-            android:gravity="center"
-            android:weightSum="1">
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/dark_blue"
+            android:text="@string/multi_choice_dialog"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/btnSimpleChoiceDialog" />
 
-            <Button
-                android:id="@+id/btnProgressBarDialog"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".9"
-                android:backgroundTint="@color/cyan"
-                android:text="@string/progress_bar_dialog"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/llDatePickerDialog"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btnProgressDialog"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/llProgressBarDialog"
-            android:layout_marginTop="13dp"
-            android:gravity="center"
-            android:weightSum="1">
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/blue"
+            android:text="@string/progress_dialog"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/btnMultiChoiceDialog" />
 
-            <Button
-                android:id="@+id/btnDatePickerDialog"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".9"
-                android:backgroundTint="@color/tourquese"
-                android:text="@string/date_picker_dialog"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/llTimePickerDialog"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btnProgressBarDialog"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/llDatePickerDialog"
-            android:layout_marginTop="13dp"
-            android:gravity="center"
-            android:weightSum="1">
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/cyan"
+            android:text="@string/progress_bar_dialog"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/btnProgressDialog" />
 
-            <Button
-                android:id="@+id/btnTimePickerDialog"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".9"
-                android:backgroundTint="@color/green"
-                android:text="@string/time_picker_dialog"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/llBottomDialog"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btnDatePickerDialog"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/llTimePickerDialog"
-            android:layout_marginTop="13dp"
-            android:gravity="center"
-            android:weightSum="1">
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/tourquese"
+            android:text="@string/date_picker_dialog"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/btnProgressBarDialog" />
 
-            <Button
-                android:id="@+id/btnBottomDialog"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".9"
-                android:backgroundTint="@color/yellow"
-                android:text="@string/bottom_dialog"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/llFullScreenDialog"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btnTimePickerDialog"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/llBottomDialog"
-            android:layout_marginTop="13dp"
-            android:gravity="center"
-            android:weightSum="1">
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/time_picker_dialog"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/btnDatePickerDialog" />
 
-            <Button
-                android:id="@+id/btnFullScreenDialog"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".9"
-                android:backgroundTint="@color/orange"
-                android:text="@string/full_screen_dialog"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/llCustomFragmentDialog"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btnBottomDialog"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/llFullScreenDialog"
-            android:layout_marginBottom="13dp"
-            android:layout_marginTop="13dp"
-            android:gravity="center"
-            android:weightSum="1">
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/yellow"
+            android:text="@string/bottom_dialog"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/btnTimePickerDialog" />
 
-            <Button
-                android:id="@+id/btnCustomFragmentDialog"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".9"
-                android:backgroundTint="@color/red"
-                android:text="@string/custom_fragment_dialog"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-    </RelativeLayout>
+        <Button
+            android:id="@+id/btnFullScreenDialog"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/orange"
+            android:text="@string/full_screen_dialog"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/btnBottomDialog" />
+
+        <Button
+            android:id="@+id/btnCustomFragmentDialog"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/red"
+            android:text="@string/custom_fragment_dialog"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/btnFullScreenDialog" />
+    </android.support.constraint.ConstraintLayout>
 </android.support.v4.widget.NestedScrollView>

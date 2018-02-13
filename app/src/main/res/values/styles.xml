@@ -8,6 +8,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppThemeLauncher" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+    </style>
+
     <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -69,13 +78,4 @@
         <item name="android:textColorPrimaryDisableOnly">#00838f</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat</item>
     </style>
-
-    <style name="AppTheme.Events" parent="AppTheme" >
-        <item name="android:windowActivityTransitions">true</item>
-        <item name="android:windowEnterTransition">@transition/enter_event</item>
-        <item name="android:windowExitTransition">@null</item>
-        <item name="android:windowReturnTransition">@null</item>
-        <item name="android:windowExitAnimation">@null</item>
-    </style>
-
 </resources>

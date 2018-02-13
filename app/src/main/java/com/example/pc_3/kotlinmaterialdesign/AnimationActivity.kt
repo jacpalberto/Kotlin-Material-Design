@@ -3,51 +3,64 @@ package com.example.pc_3.kotlinmaterialdesign
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ValueAnimator
-import android.content.Intent
+import android.annotation.TargetApi
 import android.graphics.Color
 import android.graphics.PorterDuff
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.ViewAnimationUtils
+import android.view.Window
 import kotlinx.android.synthetic.main.activity_animation.*
 import kotlinx.android.synthetic.main.toolbar.*
+import org.jetbrains.anko.*
+import org.jetbrains.anko.sdk15.listeners.onClick
+import android.app.ActivityOptions
+import android.content.Intent
+import android.transition.Explode
 
 class AnimationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        window.requestFeature(Window.FEATURE_CONTENT_TRANSITIONS) //required for transitions
         setContentView(R.layout.activity_animation)
         init()
     }
 
+    @TargetApi(Build.VERSION_CODES.M)
     private fun init() {
         setupToolBar()
-        btnToLeft.setOnClickListener {
-            launchActivity<BlankActivity> { }
+        btnToLeft.onClick {
+            startActivity<BlankActivity>()
             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
         }
-        btnToRight.setOnClickListener {
-            launchActivity<BlankActivity> { }
+        btnToRight.onClick {
+            startActivity<BlankActivity>()
             overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right)
         }
-        btnFade.setOnClickListener {
-            launchActivity<BlankActivity> { }
+        btnFade.onClick {
+            startActivity<BlankActivity>()
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
-        btnInstant.setOnClickListener {
-            launchActivity<BlankActivity> { }
-            overridePendingTransition(0, 0)
+        btnInstant.onClick {
+            startActivity(intentFor<BlankActivity>().noAnimation())
         }
-        btnRegular.setOnClickListener {
-            launchActivity<BlankActivity> { }
+        btnRegular.onClick {
+            startActivity<BlankActivity>()
         }
-        btnToDown.setOnClickListener {
-            launchActivity<BlankActivity> { }
+        btnToDown.onClick {
+            startActivity<BlankActivity>()
             overridePendingTransition(R.anim.slide_from_top, R.anim.slide_to_down)
         }
-        fillScreenButton.setOnClickListener {
+        btnExplode.onClick {
+            window.exitTransition = Explode()
+            startActivity(Intent(this, BlankActivity::class.java),
+                    ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
+        }
+        fillScreenButton.onClick {
             animateButtonWidth()
             fadeOutTextShowProgressBar()
             nextAction()
@@ -57,9 +70,8 @@ class AnimationActivity : AppCompatActivity() {
     private fun animateButtonWidth() {
         val anim = ValueAnimator.ofInt(fillScreenButton.measuredWidth, getFabWidth().toInt())
         anim.addUpdateListener { valueAnimator ->
-            val value = valueAnimator.animatedValue as Int
             val layoutParams = fillScreenButton.layoutParams
-            layoutParams.width = value
+            layoutParams.width = valueAnimator.animatedValue as Int
             fillScreenButton.requestLayout()
         }
         anim.duration = 250
@@ -104,7 +116,7 @@ class AnimationActivity : AppCompatActivity() {
         val finalRadius = Math.max(cx, cy) * 1.2f
         val reveal = ViewAnimationUtils
                 .createCircularReveal(revealView, x, y, getFabWidth(), finalRadius)
-        reveal.duration = 350
+        reveal.duration = 1000
         reveal.addListener(object : AnimatorListenerAdapter() {
             override fun onAnimationEnd(animation: Animator) {
                 reset(animation)
@@ -131,9 +143,9 @@ class AnimationActivity : AppCompatActivity() {
 
     private fun delayedStartNextActivity() {
         Handler().postDelayed({
-            launchActivity<BlankActivity> { }
+            startActivity<BlankActivity>()
             overridePendingTransition(0, 0)
-        }, 50)
+        }, 500)
     }
 
     private fun setupToolBar() {

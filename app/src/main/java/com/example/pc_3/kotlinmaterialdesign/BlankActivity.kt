@@ -1,8 +1,11 @@
 package com.example.pc_3.kotlinmaterialdesign
 
-import android.support.v7.app.AppCompatActivity
+import CircleTransform
 import android.os.Bundle
-import kotlinx.android.synthetic.main.toolbar.*
+import android.support.v7.app.AppCompatActivity
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_blank.*
+
 
 class BlankActivity : AppCompatActivity() {
 
@@ -13,7 +16,15 @@ class BlankActivity : AppCompatActivity() {
     }
 
     private fun init() {
+        loadProfileImage()
         setupToolBar()
+    }
+
+    private fun loadProfileImage() {
+        Picasso.with(applicationContext)
+                .load(R.drawable.bebe_pp)
+                .transform(CircleTransform())
+                .into(ivProfile)
     }
 
     private fun setupToolBar() {

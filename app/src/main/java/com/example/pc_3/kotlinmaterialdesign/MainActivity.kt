@@ -11,14 +11,17 @@ import android.support.v4.content.ContextCompat
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.Gravity
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar_main.*
+import org.jetbrains.anko.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.AppThemeLauncher)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         init()
@@ -89,26 +92,25 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        drawerLayout.closeDrawers()
         when (item.itemId) {
             android.R.id.home -> if (drawerLayout.isDrawerOpen(Gravity.START)) {
                 drawerLayout.closeDrawer(Gravity.START)
             } else drawerLayout.openDrawer(Gravity.START)
             R.id.menu_components -> {
-                startActivity(newIntent<ComponentsActivity>(this))
+                startActivity<ComponentsActivity>()
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
             }
             R.id.menu_activity_animations -> {
-                startActivity(newIntent<AnimationActivity>(this))
+                startActivity<AnimationActivity>()
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
             }
             R.id.menu_scrolling -> {
-                startActivity(newIntent<ScrollingActivity>(this))
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                startActivity<ScrollingActivity>()
             }
             R.id.menu_recycler -> {
             }
         }
-        drawerLayout.closeDrawers()
         return true
     }
 
