@@ -54,6 +54,15 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="AppThemeRecycler" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/gray</item>
+        <item name="colorPrimaryDark">@color/dark_gray</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:navigationBarColor">@color/dark_gray</item>
+        <item name="android:displayOptions">disableHome</item>
+    </style>
+
     <style name="SwitchCompatTheme">
         <item name="android:thumb">@drawable/custom_swcompat_thumb</item>
         <item name="trackTint">@color/custom_track_swcompat</item>

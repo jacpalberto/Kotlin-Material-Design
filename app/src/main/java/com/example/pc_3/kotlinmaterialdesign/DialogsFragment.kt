@@ -24,13 +24,12 @@ class DialogsFragment : Fragment() {
     private lateinit var v: View
     private val calendar by lazy { Calendar.getInstance() }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        v = inflater!!.inflate(R.layout.fragment_dialogs, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        v = inflater.inflate(R.layout.fragment_dialogs, container, false)
         return v
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
     }
@@ -102,7 +101,7 @@ class DialogsFragment : Fragment() {
         btnMultiChoiceDialog.setOnClickListener {
             val multiChoiceItems = resources.getStringArray(R.array.dialog_choice_array)
             val checkedItems = booleanArrayOf(false, false, false, false, false)
-            AlertDialog.Builder(context)
+            AlertDialog.Builder(context!!)
                     .setTitle(getString(R.string.main_dialog_multi_choice))
                     .setMultiChoiceItems(multiChoiceItems, checkedItems, null)
                     .setPositiveButton(getString(R.string.ok), null)
@@ -122,20 +121,20 @@ class DialogsFragment : Fragment() {
         }
 
         btnBottomDialog.setOnClickListener {
-            val mBottomSheetDialog = BottomSheetDialog(context)
-            val dialogView = activity.layoutInflater.inflate(R.layout.dialog_bottom_sheet, null)
-            val btnBottomDialogOk = dialogView.findViewById(R.id.btn_dialog_bottom_sheet_ok)
-            val btnBottomDialogCancel = dialogView.findViewById(R.id.btn_dialog_bottom_sheet_cancel)
+            val mBottomSheetDialog = BottomSheetDialog(context!!)
+            val dialogView = activity?.layoutInflater?.inflate(R.layout.dialog_bottom_sheet, null)
+            val btnBottomDialogOk = dialogView?.findViewById<View>(R.id.btn_dialog_bottom_sheet_ok)
+            val btnBottomDialogCancel = dialogView?.findViewById<View>(R.id.btn_dialog_bottom_sheet_cancel)
             mBottomSheetDialog.setContentView(dialogView)
-            btnBottomDialogOk.setOnClickListener({ mBottomSheetDialog.dismiss() })
-            btnBottomDialogCancel.setOnClickListener({ mBottomSheetDialog.dismiss() })
+            btnBottomDialogOk?.setOnClickListener({ mBottomSheetDialog.dismiss() })
+            btnBottomDialogCancel?.setOnClickListener({ mBottomSheetDialog.dismiss() })
             mBottomSheetDialog.show()
         }
 
         btnFullScreenDialog.setOnClickListener {
             val fullscreenDialog = Dialog(context, R.style.DialogFullscreen)
             fullscreenDialog.setContentView(R.layout.dialog_fullscreen)
-            val ivClose = fullscreenDialog.findViewById(R.id.img_dialog_fullscreen_close)
+            val ivClose = fullscreenDialog.findViewById<View>(R.id.img_dialog_fullscreen_close)
             ivClose.setOnClickListener({ fullscreenDialog.dismiss() })
             fullscreenDialog.show()
         }

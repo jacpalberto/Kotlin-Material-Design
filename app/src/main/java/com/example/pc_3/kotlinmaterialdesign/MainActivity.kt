@@ -11,24 +11,25 @@ import android.support.v4.content.ContextCompat
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.view.Gravity
 import android.view.MenuItem
+import com.example.pc_3.kotlinmaterialdesign.adapters.PagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar_main.*
-import org.jetbrains.anko.*
+import org.jetbrains.anko.startActivity
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppThemeLauncher)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         init()
     }
 
     private fun init() {
-        setupToolBar()
+        setupToolbar()
         setupNavView()
         setupViewPager()
         setupTabLayout()
@@ -51,7 +52,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navView.setNavigationItemSelectedListener(this)
     }
 
-    private fun setupToolBar() {
+    private fun setupToolbar() {
         setSupportActionBar(toolbar)
         val actionBar = supportActionBar
         actionBar?.title = "Kotlin Material Design"
@@ -62,7 +63,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         tabLayout.addTab(tabLayout.newTab().setText(R.string.widgets))
         tabLayout.addTab(tabLayout.newTab().setText(R.string.messages))
         mPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
-
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 mPager.currentItem = tab.position
@@ -107,8 +107,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             R.id.menu_scrolling -> {
                 startActivity<ScrollingActivity>()
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
             }
             R.id.menu_recycler -> {
+                startActivity<RecyclerActivity>()
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
             }
         }
         return true
@@ -121,4 +124,3 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         else -> ContextCompat.getColor(this, R.color.dark_gray)
     }
 }
-

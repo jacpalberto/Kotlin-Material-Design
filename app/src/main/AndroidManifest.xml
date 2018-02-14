@@ -3,6 +3,7 @@
     package="com.example.pc_3.kotlinmaterialdesign">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
@@ -19,6 +20,7 @@
             android:theme="@style/AppThemeLauncher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -32,15 +34,12 @@
         <activity
             android:name=".ScrollingActivity"
             android:theme="@style/AppTheme.NoActionBarTransparent" />
-
-        <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.example.android.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
-        </provider>
+        <activity
+            android:name=".RecyclerActivity"
+            android:theme="@style/AppThemeRecycler" />
+        <activity
+            android:name=".DetailActivity"
+            android:theme="@style/AppThemeRecycler" />
     </application>
+
 </manifest>

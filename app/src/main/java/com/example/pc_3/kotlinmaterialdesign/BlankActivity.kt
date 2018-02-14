@@ -35,7 +35,6 @@ class BlankActivity : AppCompatActivity() {
         actionBar?.setDisplayShowHomeEnabled(true)
     }
 
-
     override fun finish() {
         super.finish()
         overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right)

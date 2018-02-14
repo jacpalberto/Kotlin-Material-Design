@@ -85,4 +85,6 @@
     <string name="messages_field_random_background_color">Random background</string>
     <string name="messages_field_random_position">Random position</string>
     <string name="explode_animation">Explode animation</string>
+    <string name="show_as_grid">Show as grid</string>
+    <string name="show_as_list">Show as list</string>
 </resources>

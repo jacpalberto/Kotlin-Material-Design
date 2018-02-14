@@ -1,4 +1,4 @@
-package com.example.pc_3.kotlinmaterialdesign
+package com.example.pc_3.kotlinmaterialdesign.adapters
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
