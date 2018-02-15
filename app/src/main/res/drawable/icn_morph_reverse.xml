@@ -9,5 +9,5 @@
         android:animation="@anim/path_morph_lg_reverse" />
     <target
         android:name="horizontal_line"
-        android:animation="@anim/fade_in" />
+        android:animation="@anim/path_fade_in" />
 </animated-vector>

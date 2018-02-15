@@ -3,7 +3,6 @@ package com.example.pc_3.kotlinmaterialdesign
 import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
 import android.graphics.drawable.ColorDrawable
-import android.os.Build
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.design.widget.TabLayout
@@ -14,6 +13,8 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Gravity
 import android.view.MenuItem
 import com.example.pc_3.kotlinmaterialdesign.adapters.PagerAdapter
+import com.example.pc_3.kotlinmaterialdesign.messages.MessagesFragment
+import com.example.pc_3.kotlinmaterialdesign.recycler.RecyclerActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar_main.*
 import org.jetbrains.anko.startActivity
@@ -22,7 +23,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppThemeLauncher)
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         init()
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private fun setupToolbar() {
         setSupportActionBar(toolbar)
         val actionBar = supportActionBar
-        actionBar?.title = "Kotlin Material Design"
+        actionBar?.title = getString(R.string.toolbar_app_name)
     }
 
     private fun setupTabLayout() {
@@ -73,9 +73,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     val color = animator.animatedValue as Int
                     toolbar.setBackgroundColor(color)
                     tabLayout.setBackgroundColor(color)
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        window.statusBarColor = color
-                    }
+                    window.statusBarColor = getColorFromWindow(tab.position)
                 }
                 colorAnimation.duration = 250
                 colorAnimation.start()
@@ -120,7 +118,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     fun getColorFromTab(position: Int) = when (position) {
         0 -> ContextCompat.getColor(this, R.color.colorPrimary)
         1 -> ContextCompat.getColor(this, R.color.purple)
+        2 -> ContextCompat.getColor(this, R.color.dark_gray)
+        else -> ContextCompat.getColor(this, android.R.color.black)
+    }
+
+    fun getColorFromWindow(position: Int) = when (position) {
+        0 -> ContextCompat.getColor(this, R.color.dark_blue)
+        1 -> ContextCompat.getColor(this, R.color.dark_purple)
         2 -> ContextCompat.getColor(this, android.R.color.black)
-        else -> ContextCompat.getColor(this, R.color.dark_gray)
+        else -> ContextCompat.getColor(this, android.R.color.black)
     }
 }

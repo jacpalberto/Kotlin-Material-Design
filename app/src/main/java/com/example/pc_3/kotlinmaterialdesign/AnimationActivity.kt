@@ -19,6 +19,7 @@ import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.listeners.onClick
 import android.app.ActivityOptions
 import android.content.Intent
+import android.support.v4.content.ContextCompat
 import android.transition.Explode
 
 class AnimationActivity : AppCompatActivity() {
@@ -86,14 +87,13 @@ class AnimationActivity : AppCompatActivity() {
                         super.onAnimationEnd(animation)
                         showProgressDialog()
                     }
-                })
-                .start()
+                }).start()
     }
 
     private fun showProgressDialog() {
         progressBar.alpha = 1f
         progressBar.indeterminateDrawable
-                .setColorFilter(Color.parseColor("#ffffff"), PorterDuff.Mode.SRC_IN)
+                .setColorFilter(ContextCompat.getColor(this, android.R.color.white), PorterDuff.Mode.SRC_IN)
         progressBar.visibility = View.VISIBLE
     }
 

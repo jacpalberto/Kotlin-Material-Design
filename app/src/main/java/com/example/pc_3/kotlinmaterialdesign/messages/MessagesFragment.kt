@@ -1,4 +1,4 @@
-package com.example.pc_3.kotlinmaterialdesign
+package com.example.pc_3.kotlinmaterialdesign.messages
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -6,9 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_messages.*
-import android.content.Context.LAYOUT_INFLATER_SERVICE
+import com.example.pc_3.kotlinmaterialdesign.*
 import org.jetbrains.anko.sdk15.listeners.textChangedListener
-import org.jetbrains.anko.support.v4.toast
 
 
 class MessagesFragment : Fragment() {
@@ -35,13 +34,13 @@ class MessagesFragment : Fragment() {
                     checkRandomBackground.isChecked,
                     checkRandomPosition.isChecked)
         }
-        btnCustomToast.setOnClickListener { activity?.customLayoutToast(getMessageText()) }
         btnSnackbar.setOnClickListener {
             v.customSnack(getMessageText(),
                     checkRandomTextColor.isChecked,
                     checkRandomBackground.isChecked,
                     checkRandomPosition.isChecked)
         }
+        btnCustomToast.setOnClickListener { activity?.customLayoutToast(getMessageText()) }
         btnNotification.setOnClickListener { activity?.createNotification(getMessageText()) }
         btnCustomNotification.setOnClickListener { activity?.createCustomNotification(getMessageText()) }
         btnRichNotification.setOnClickListener { activity?.createRichNotification(getMessageText()) }

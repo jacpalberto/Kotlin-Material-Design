@@ -3,9 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.pc_3.kotlinmaterialdesign.RecyclerActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.pc_3.kotlinmaterialdesign.recycler.RecyclerActivity">
 
-    <include layout="@layout/toolbar" />
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        android:minHeight="?android:attr/actionBarSize"
+        android:transitionName="tActionBar" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/list"

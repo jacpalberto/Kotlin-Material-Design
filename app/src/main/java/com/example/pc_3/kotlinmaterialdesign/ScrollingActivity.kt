@@ -20,19 +20,16 @@ class ScrollingActivity : AppCompatActivity() {
     }
 
     private fun setupFab() {
-        scrollingFab.onClick {
-            share("App developer by Alberto Carrillo","Send to")
-        }
+        scrollingFab.onClick { share(getString(R.string.share_text), getString(R.string.share_subject)) }
     }
 
     private fun setupToolBar() {
         setSupportActionBar(toolbar)
         val actionBar = supportActionBar
-        actionBar?.title = "Scrolling"
+        actionBar?.title = getString(R.string.toolbar_scrolling_title)
         actionBar?.setDisplayHomeAsUpEnabled(true)
         actionBar?.setDisplayShowHomeEnabled(true)
     }
-
 
     override fun finish() {
         super.finish()

@@ -27,18 +27,21 @@
         <activity
             android:name=".ComponentsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AnimationActivity" />
+        <activity
+            android:name=".AnimationActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".BlankActivity"
+            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ScrollingActivity"
             android:theme="@style/AppTheme.NoActionBarTransparent" />
         <activity
-            android:name=".RecyclerActivity"
+            android:name=".recycler.RecyclerActivity"
             android:theme="@style/AppThemeRecycler" />
         <activity
-            android:name=".DetailActivity"
+            android:name=".recycler.DetailActivity"
             android:theme="@style/AppThemeRecycler" />
     </application>
 

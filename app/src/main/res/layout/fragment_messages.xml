@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/messages_bckgnd"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.pc_3.kotlinmaterialdesign.MessagesFragment">
+    tools:context="com.example.pc_3.kotlinmaterialdesign.messages.MessagesFragment">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"

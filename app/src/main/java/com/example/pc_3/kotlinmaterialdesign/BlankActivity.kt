@@ -1,11 +1,9 @@
 package com.example.pc_3.kotlinmaterialdesign
 
-import CircleTransform
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.squareup.picasso.Picasso
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_blank.*
-
 
 class BlankActivity : AppCompatActivity() {
 
@@ -21,16 +19,16 @@ class BlankActivity : AppCompatActivity() {
     }
 
     private fun loadProfileImage() {
-        Picasso.with(applicationContext)
+        Glide.with(this)
                 .load(R.drawable.bebe_pp)
-                .transform(CircleTransform())
+                .transform(GlideCircleTransform(this))
                 .into(ivProfile)
     }
 
     private fun setupToolBar() {
         setSupportActionBar(toolbar)
         val actionBar = supportActionBar
-        actionBar?.title = "Default Activity"
+        actionBar?.title = getString(R.string.toolbar_blank_title)
         actionBar?.setDisplayHomeAsUpEnabled(true)
         actionBar?.setDisplayShowHomeEnabled(true)
     }

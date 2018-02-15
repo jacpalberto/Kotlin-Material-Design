@@ -1,4 +1,4 @@
-package com.example.pc_3.kotlinmaterialdesign
+package com.example.pc_3.kotlinmaterialdesign.messages
 
 import android.app.Notification
 import android.app.NotificationManager
@@ -19,6 +19,7 @@ import android.view.View
 import android.widget.RemoteViews
 import android.widget.TextView
 import android.widget.Toast
+import com.example.pc_3.kotlinmaterialdesign.R
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -276,8 +277,7 @@ fun getCurrentTime(): CharSequence? {
     return dateFormat.format(date)
 }
 
-fun getRandomColor(): Int {
-    return when (Random().nextInt(11 - 0) + 0) {
+fun getRandomColor() = when (Random().nextInt(11 - 0) + 0) {
         0 -> Color.BLACK
         1 -> Color.YELLOW
         2 -> Color.RED
@@ -290,10 +290,9 @@ fun getRandomColor(): Int {
         9 -> Color.MAGENTA
         else -> Color.TRANSPARENT
     }
-}
 
-fun getRandomGravity(): Int {
-    return when (Random().nextInt(9 - 0) + 0) {
+
+fun getRandomGravity() = when (Random().nextInt(9 - 0) + 0) {
         0 -> Gravity.TOP or Gravity.START
         1 -> Gravity.TOP or Gravity.CENTER
         2 -> Gravity.TOP or Gravity.END
@@ -304,4 +303,3 @@ fun getRandomGravity(): Int {
         7 -> Gravity.BOTTOM or Gravity.CENTER
         else -> Gravity.BOTTOM or Gravity.END
     }
-}

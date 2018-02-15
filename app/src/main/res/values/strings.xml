@@ -87,4 +87,10 @@
     <string name="explode_animation">Explode animation</string>
     <string name="show_as_grid">Show as grid</string>
     <string name="show_as_list">Show as list</string>
+    <string name="toolbar_app_name">Kotlin Material Design</string>
+    <string name="toolbar_scrolling_title">Scrolling</string>
+    <string name="share_text">App developed by Alberto Carrillo</string>
+    <string name="share_subject">Send to</string>
+    <string name="toolbar_blank_title">Default Activity</string>
+    <string name="toolbar_recycler_title">Around the world</string>
 </resources>

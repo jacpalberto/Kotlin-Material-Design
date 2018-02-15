@@ -1,15 +1,45 @@
-# Created by .ignore support plugin (hsz.mobi)
-### Example user template template
-### Example user template
+.DS_Store
 
-# IntelliJ project files
-.idea
-*.iml
-out
-gen
-.gitignore
-.gradle/
-.idea/workspace.xml
-app/build/
-build/
+# Archivos de la aplicacion creados.
+*.apk
+*.ap_
+
+# Archivos DEX de la VM
+*.dex
+
+# Clases generadas Java
+*.class
+
+# Archivos generados
+bin/
+out/
+gen/
+
+# Librerias usadas en la aplicacion.
+# Pueden adicionarse librerias pero es mejor tener control sobre ellas.
+/libs
+
+
+# Archivos generados automaticamente por el IDE.
+build.xml
+ant.properties
 local.properties
+project.properties
+
+# Archivos de proyectos Eclipse.
+.classpath
+.project
+
+# Archivos de IDEA.
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Archivos Gradle de Construccion.
+.gradle
+build/
+app/captures/
+app/gradle/
+app/gradlew
+app/gradlew.bat

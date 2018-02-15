@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.WindowManager
 
-
 /**
  * Created by Alberto Carrillo on 22/09/2017.
  */

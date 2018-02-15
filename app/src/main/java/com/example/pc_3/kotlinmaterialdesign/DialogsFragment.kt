@@ -10,6 +10,7 @@ import android.support.v7.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.pc_3.kotlinmaterialdesign.messages.snack
 import kotlinx.android.synthetic.main.fragment_dialogs.*
 import org.jetbrains.anko.cancelButton
 import org.jetbrains.anko.doAsync
