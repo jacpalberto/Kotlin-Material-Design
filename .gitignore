@@ -1,3 +1,13 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+
 .DS_Store
 
 # Archivos de la aplicacion creados.
@@ -31,15 +41,3 @@ project.properties
 .project
 
 # Archivos de IDEA.
-.idea/
-*.iml
-*.ipr
-*.iws
-
-# Archivos Gradle de Construccion.
-.gradle
-build/
-app/captures/
-app/gradle/
-app/gradlew
-app/gradlew.bat
