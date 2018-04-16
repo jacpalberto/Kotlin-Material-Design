@@ -5,15 +5,19 @@ import android.app.Dialog
 import android.app.TimePickerDialog
 import android.os.Bundle
 import android.support.design.widget.BottomSheetDialog
+import android.support.v4.app.ActivityCompat
+import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.app.Fragment
 import android.support.v7.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import com.example.pc_3.kotlinmaterialdesign.messages.snack
 import kotlinx.android.synthetic.main.fragment_dialogs.*
 import org.jetbrains.anko.cancelButton
 import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.noHistory
 import org.jetbrains.anko.okButton
 import org.jetbrains.anko.sdk15.listeners.onClick
 import org.jetbrains.anko.support.v4.*
@@ -22,12 +26,12 @@ import java.util.*
 
 
 class DialogsFragment : Fragment() {
-    private lateinit var v: View
+    private lateinit var fragmentView: View
     private val calendar by lazy { Calendar.getInstance() }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        v = inflater.inflate(R.layout.fragment_dialogs, container, false)
-        return v
+        fragmentView = inflater.inflate(R.layout.fragment_dialogs, container, false)
+        return fragmentView
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,6 +40,7 @@ class DialogsFragment : Fragment() {
     }
 
     private fun init() {
+        //loadProfileImage()
         initAnkoDialogs()
         initRegularDialogs()
     }
@@ -44,6 +49,7 @@ class DialogsFragment : Fragment() {
         btnSimpleDialog.onClick {
             alert(R.string.main_dialog_simple_title) {
                 okButton { toast("Yay!") }
+                cancelButton { }
             }.show()
         }
 
@@ -58,7 +64,7 @@ class DialogsFragment : Fragment() {
         btnSimpleChoiceDialog.onClick {
             val singleChoiceItems = resources.getStringArray(R.array.dialog_choice_array)
             selector(getString(R.string.main_dialog_single_choice), singleChoiceItems.toList()) { _, i ->
-                v.snack(singleChoiceItems[i] + " picked")
+                fragmentView.snack(singleChoiceItems[i] + " picked")
             }
         }
 
@@ -70,7 +76,7 @@ class DialogsFragment : Fragment() {
             progressDialog(message = R.string.main_dialog_progress_title, title = R.string.app_name).apply {
                 max = 100
                 setCancelable(false)
-                setOnDismissListener { v.snack("Completed") }
+                setOnDismissListener { fragmentView.snack("Completed") }
                 doAsync {
                     (0..100).forEach {
                         incrementProgressBy(1)
@@ -87,7 +93,7 @@ class DialogsFragment : Fragment() {
     }
 
     private fun initRegularDialogs() {
-        btnDatePickerDialog.setOnClickListener {
+        btnDatePickerDialog.onClick {
             val datePickerDialog = DatePickerDialog(context, DatePickerDialog.OnDateSetListener
             { _, year, monthOfYear, dayOfMonth ->
                 calendar.set(Calendar.YEAR, year)
@@ -99,7 +105,7 @@ class DialogsFragment : Fragment() {
             datePickerDialog.show()
         }
 
-        btnMultiChoiceDialog.setOnClickListener {
+        btnMultiChoiceDialog.onClick {
             val multiChoiceItems = resources.getStringArray(R.array.dialog_choice_array)
             val checkedItems = booleanArrayOf(false, false, false, false, false)
             AlertDialog.Builder(context!!)
@@ -110,7 +116,7 @@ class DialogsFragment : Fragment() {
                     .show()
         }
 
-        btnTimePickerDialog.setOnClickListener {
+        btnTimePickerDialog.onClick {
             val timePickerDialog = TimePickerDialog(context, TimePickerDialog.OnTimeSetListener
             { _, i, i1 ->
                 calendar.set(Calendar.HOUR_OF_DAY, i)
@@ -121,7 +127,7 @@ class DialogsFragment : Fragment() {
             timePickerDialog.show()
         }
 
-        btnBottomDialog.setOnClickListener {
+        btnBottomDialog.onClick {
             val mBottomSheetDialog = BottomSheetDialog(context!!)
             val dialogView = activity?.layoutInflater?.inflate(R.layout.dialog_bottom_sheet, null)
             val btnBottomDialogOk = dialogView?.findViewById<View>(R.id.btn_dialog_bottom_sheet_ok)
@@ -132,65 +138,72 @@ class DialogsFragment : Fragment() {
             mBottomSheetDialog.show()
         }
 
-        btnFullScreenDialog.setOnClickListener {
+        btnFullScreenDialog.onClick {
             val fullscreenDialog = Dialog(context, R.style.DialogFullscreen)
             fullscreenDialog.setContentView(R.layout.dialog_fullscreen)
             val ivClose = fullscreenDialog.findViewById<View>(R.id.img_dialog_fullscreen_close)
             ivClose.setOnClickListener({ fullscreenDialog.dismiss() })
             fullscreenDialog.show()
         }
-        /*btnSimpleDialog.setOnClickListener {
-            AlertDialog.Builder(context)
-                    .setMessage(getString(R.string.main_dialog_simple_title))
-                    .setPositiveButton(getString(R.string.ok), null)
-                    .show()
-        }
-        btnButtonsDialog.setOnClickListener {
-            AlertDialog.Builder(context)
-                    .setTitle(getString(R.string.main_dialog_simple_title))
-                    .setMessage(getString(R.string.lorem))
-                    .setPositiveButton(getString(R.string.ok), null)
-                    .setNegativeButton(getString(R.string.cancel), null)
-                    .setNeutralButton(getString(R.string.neutral), null)
-                    .show()
-        }
-        btnSimpleChoiceDialog.setOnClickListener {
-            val singleChoiceItems = resources.getStringArray(R.array.dialog_choice_array)
-            val itemSelected = 0
-            AlertDialog.Builder(context)
-                    .setTitle(getString(R.string.main_dialog_single_choice))
-                    .setSingleChoiceItems(singleChoiceItems, itemSelected) { dialogInterface, i ->
-                        dialogInterface.dismiss()
-                        v.snack(singleChoiceItems[i] + " picked")
-                    }
-                    .setNegativeButton(getString(R.string.cancel), null)
-                    .show()
-        }
-        btnProgressDialog.setOnClickListener {
-            val progressDialog = ProgressDialog(context)
-            progressDialog.setMessage(getString(R.string.main_dialog_progress_title))
-            progressDialog.show()
-        }
-        btnProgressBarDialog.setOnClickListener {
-            val horizontalProgressDialog = ProgressDialog(context)
-            horizontalProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL)
-            horizontalProgressDialog.setMessage(getString(R.string.main_dialog_progress_title))
-            horizontalProgressDialog.setCancelable(false)
-            horizontalProgressDialog.max = 100
-            horizontalProgressDialog.show()
 
-            Thread().run {
-                (0..100).forEach {
-                    horizontalProgressDialog.progress = it
-                    if (it == 100) horizontalProgressDialog.dismiss()
-                    try {
-                        Thread.sleep(35)
-                    } catch (e: InterruptedException) {
-                        e.printStackTrace()
-                    }
-                }
-            }
-            horizontalProgressDialog.setOnDismissListener { v.snack("Completed") }
-        }   */
+        btnCustomFragmentDialog.onClick { }
+
+        ivProfile.onClick {
+            val transitionIntent = intentFor<DialogActivity>().noHistory()
+            val options = ActivityOptionsCompat
+                    .makeSceneTransitionAnimation(activity!!, ivProfile, ivProfile.transitionName)
+            ActivityCompat.startActivity(activity!!, transitionIntent, options.toBundle())
+        }
     }
+
+    private fun loadProfileImage() {
+        Glide.with(this)
+                .load(R.drawable.img_bebe_small)
+                .transform(GlideCircleTransform(activity!!))
+                .into(ivProfile)
+    }
+
+    fun arithmeticExpression(a: Int, b: Int, c: Int) = (a - b == c) || (a + b == c) || (a * b == c) ||
+            (a.toDouble() / b.toDouble() == c.toDouble())
+
+    fun tennisSet(score1: Int, score2: Int) =
+            (Math.min(score1, score2) < 5 && Math.max(score1, score2) == 6) ||
+                    (Math.min(score1, score2) >= 5 && Math.max(score1, score2) == 7)
+                    && score1 != score2
+
+    fun arrayPacking(a: MutableList<Int>) = a.map { it.toString(2).padStart(8, '0') }.reversed().joinToString("").toInt(2)
+
+    fun rangeBitCount(a: Int, b: Int) = (a..b).toMutableList()
+            .joinToString("") { it.toString(2) }
+            .count { it == '1' }
+
+    fun rangeBitCo1unt(a: Int, b: Int) = (a..b).toMutableList()
+            .map { it.toString(2) }
+            .map {
+                it.map { Integer.parseInt("$it") }
+                        .reduce { acc, c -> acc + c }
+            }
+            .reduce { acc, c -> acc + c }
+
+    fun mirrorBits(a: Int) = a.toString(2).reversed()
+
+    fun leastFactorial(n: Int): Int {
+        var factorial = 1
+        var counter = 1
+        while (factorial < n) factorial *= counter++
+        return factorial * counter
+    }
+
+    fun countSumOfTwoRepresentations2(n: Int, l: Int, r: Int) =
+            (l..r).count { n - it in (l + (it - l)..r) }
+
+    fun magicalWell(a: Int, b: Int, n: Int) = (0 until n).map { (a + it) * (b + it) }.sum()
+
+    fun additionWithoutCarrying(n1: Int, n2: Int) = n1.toString().padStart(Math.max(n1.toString().length, n2.toString().length), '0').zip(n2.toString().padStart(Math.max(n1.toString().length, n2.toString().length), '0')).map { ("${it.first}".toInt() + "${it.second}".toInt()).toString().last() }.joinToString("").toInt()
+
+    fun helloWorld() : String {
+        return "helloWorld"
+    }
+
+    fun hello() = "hello"
 }

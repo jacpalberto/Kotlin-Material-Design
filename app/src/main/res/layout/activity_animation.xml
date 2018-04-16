@@ -4,9 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.pc_3.kotlinmaterialdesign.AnimationActivity">
+    tools:context="com.example.pc_3.kotlinmaterialdesign.intents_animation.AnimationActivity">
 
-    <include layout="@layout/toolbar" />
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:transitionName="tActionBar"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -16,9 +31,8 @@
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
             android:paddingBottom="5dp"
-            android:layout_gravity="center">
+            android:paddingTop="10dp">
 
             <android.support.constraint.Guideline
                 android:id="@+id/guidelineStart"
@@ -73,7 +87,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="@color/tourquese"
+                android:backgroundTint="@color/turquoise"
                 android:text="@string/instant_animation"
                 android:textColor="@android:color/white"
                 app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
@@ -116,6 +130,60 @@
                 app:layout_constraintStart_toStartOf="@id/guidelineStart"
                 app:layout_constraintTop_toBottomOf="@id/btnToDown" />
 
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/red"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/btnExplode">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp">
+
+                    <ImageView
+                        android:id="@+id/ivProfile"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="8dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/img_bebe_small"
+                        android:transitionName="tImage"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvProfileName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Bebe Rexha"
+                        android:textColor="@android:color/black"
+                        android:textSize="30sp"
+                        android:transitionName="tProfileName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ivProfile" />
+
+                    <TextView
+                        android:id="@+id/tvProfileDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="sans-serif-light"
+                        android:text="musician, singer, songwriter"
+                        android:textSize="14sp"
+                        android:transitionName="tProfileDescription"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvProfileName" />
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
             <FrameLayout
                 android:id="@+id/fillScreenButton"
                 android:layout_width="300dp"
@@ -128,7 +196,7 @@
                 android:foreground="?selectableItemBackground"
                 app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
                 app:layout_constraintStart_toStartOf="@id/guidelineStart"
-                app:layout_constraintTop_toBottomOf="@id/btnExplode">
+                app:layout_constraintTop_toBottomOf="@id/cardProfile">
 
                 <TextView
                     android:id="@+id/buttonTitleTextView"
@@ -153,7 +221,9 @@
         android:id="@+id/revealView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/red"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/purple"
         android:visibility="invisible" />
 </RelativeLayout>
 

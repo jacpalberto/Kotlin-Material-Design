@@ -1,26 +1,36 @@
-package com.example.pc_3.kotlinmaterialdesign
+package com.example.pc_3.kotlinmaterialdesign.intents_animation
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ValueAnimator
-import android.annotation.TargetApi
-import android.graphics.Color
+import android.app.ActivityOptions
+import android.content.Intent
 import android.graphics.PorterDuff
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.support.v4.app.ActivityCompat
+import android.support.v4.app.ActivityOptionsCompat
+import android.support.v4.content.ContextCompat
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory
+import android.support.v4.util.Pair
 import android.support.v7.app.AppCompatActivity
+import android.transition.Explode
 import android.view.View
 import android.view.ViewAnimationUtils
 import android.view.Window
+import com.bumptech.glide.Glide
+import com.example.pc_3.kotlinmaterialdesign.GlideCircleTransform
+import com.example.pc_3.kotlinmaterialdesign.R
 import kotlinx.android.synthetic.main.activity_animation.*
-import kotlinx.android.synthetic.main.toolbar.*
-import org.jetbrains.anko.*
+import org.jetbrains.anko.intentFor
+import org.jetbrains.anko.noAnimation
 import org.jetbrains.anko.sdk15.listeners.onClick
-import android.app.ActivityOptions
-import android.content.Intent
-import android.support.v4.content.ContextCompat
-import android.transition.Explode
+import org.jetbrains.anko.startActivity
+import android.opengl.ETC1.getWidth
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable
+import android.graphics.BitmapFactory
+import android.graphics.Bitmap
+
 
 class AnimationActivity : AppCompatActivity() {
 
@@ -31,41 +41,60 @@ class AnimationActivity : AppCompatActivity() {
         init()
     }
 
-    @TargetApi(Build.VERSION_CODES.M)
     private fun init() {
+        loadProfileImage()
         setupToolBar()
-        btnToLeft.onClick {
-            startActivity<BlankActivity>()
-            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
-        }
-        btnToRight.onClick {
-            startActivity<BlankActivity>()
-            overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right)
-        }
-        btnFade.onClick {
-            startActivity<BlankActivity>()
-            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-        }
-        btnInstant.onClick {
-            startActivity(intentFor<BlankActivity>().noAnimation())
-        }
-        btnRegular.onClick {
-            startActivity<BlankActivity>()
-        }
-        btnToDown.onClick {
-            startActivity<BlankActivity>()
-            overridePendingTransition(R.anim.slide_from_top, R.anim.slide_to_down)
-        }
+        btnToLeft.onClick { startTransitionBlankActivity(R.anim.slide_from_right, R.anim.slide_to_left) }
+        btnToRight.onClick { startTransitionBlankActivity(R.anim.slide_from_left, R.anim.slide_to_right) }
+        btnFade.onClick { startTransitionBlankActivity(R.anim.fade_in, R.anim.fade_out) }
+        btnInstant.onClick { startActivity(intentFor<BlankActivity>().noAnimation()) }
+        btnRegular.onClick { startActivity<BlankActivity>() }
+        btnToDown.onClick { startTransitionBlankActivity(R.anim.slide_from_top, R.anim.slide_to_down) }
         btnExplode.onClick {
             window.exitTransition = Explode()
-            startActivity(Intent(this, BlankActivity::class.java),
-                    ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
+            val options = ActivityOptions.makeSceneTransitionAnimation(this).toBundle()
+            startActivity(Intent(this, BlankActivity::class.java), options)
+        }
+        cardProfile.onClick {
+            val transitionIntent = Intent(this, BlankActivity::class.java)
+            val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this, *getTransitionPairList())
+            ActivityCompat.startActivity(this, transitionIntent, options.toBundle())
         }
         fillScreenButton.onClick {
             animateButtonWidth()
             fadeOutTextShowProgressBar()
             nextAction()
         }
+    }
+
+    private fun getTransitionPairList(): Array<out Pair<View, String>> {
+        val navigationBar = findViewById<View>(android.R.id.navigationBarBackground)
+        val statusBar = findViewById<View>(android.R.id.statusBarBackground)
+        val pairList = mutableListOf(
+                Pair(ivProfile as View, "tImage"),
+                Pair(tvProfileName as View, "tProfileName"),
+                Pair(tvProfileDescription as View, "tProfileDescription"),
+                Pair(statusBar, Window.STATUS_BAR_BACKGROUND_TRANSITION_NAME)).apply {
+            if (navigationBar != null && statusBar != null)
+                add(Pair(navigationBar, Window.NAVIGATION_BAR_BACKGROUND_TRANSITION_NAME))
+        }
+        return pairList.toTypedArray()
+    }
+
+    private fun loadProfileImage() {
+        Glide.with(this)
+                .load(R.drawable.img_bebe_small)
+                .transform(GlideCircleTransform(this))
+                .into(ivProfile)
+    }
+
+    private fun loadProfileImageWithCircularDrawable() {
+        val bitmapBitmap = BitmapFactory.decodeResource(resources, R.drawable.img_bebe_small)
+        val circularBitmapDrawable = RoundedBitmapDrawableFactory.create(resources, bitmapBitmap).apply {
+            cornerRadius = bitmapBitmap.width.toFloat()
+            isCircular = true
+        }
+        ivProfile.setImageDrawable(circularBitmapDrawable)
     }
 
     private fun animateButtonWidth() {
@@ -102,7 +131,7 @@ class AnimationActivity : AppCompatActivity() {
             revealButton()
             fadeOutProgressDialog()
             delayedStartNextActivity()
-        }, 2000)
+        }, 1300)
     }
 
     private fun revealButton() {
@@ -145,13 +174,13 @@ class AnimationActivity : AppCompatActivity() {
         Handler().postDelayed({
             startActivity<BlankActivity>()
             overridePendingTransition(0, 0)
-        }, 500)
+        }, 700)
     }
 
     private fun setupToolBar() {
         setSupportActionBar(toolbar)
         val actionBar = supportActionBar
-        actionBar?.title = "Animation Activity"
+        actionBar?.title = getString(R.string.toolbar_animation_title)
         actionBar?.setDisplayHomeAsUpEnabled(true)
         actionBar?.setDisplayShowHomeEnabled(true)
     }
@@ -169,6 +198,11 @@ class AnimationActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+
+    private fun startTransitionBlankActivity(animStart: Int, animEnd: Int) {
+        startActivity<BlankActivity>()
+        overridePendingTransition(animStart, animEnd)
     }
 
     private fun getFabWidth() = resources.getDimension(R.dimen.fab_size)

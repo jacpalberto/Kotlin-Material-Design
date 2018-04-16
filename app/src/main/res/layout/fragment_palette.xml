@@ -1,0 +1,257 @@
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.pc_3.kotlinmaterialdesign.PaletteFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:paddingBottom="8dp"
+        android:layout_height="wrap_content">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2" />
+
+        <ImageView
+            android:id="@+id/paletteImageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/item_santorini"
+            app:layout_constraintDimensionRatio="H,3:2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinnerOptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:entries="@array/spinnerItems"
+            android:prompt="@string/hello_blank_fragment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvScaleType"
+            app:layout_constraintTop_toBottomOf="@+id/paletteImageView" />
+
+        <TextView
+            android:id="@+id/tvScaleType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scale type: "
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/spinnerOptions"
+            app:layout_constraintEnd_toStartOf="@+id/spinnerOptions"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/spinnerOptions" />
+
+        <ImageView
+            android:id="@+id/darkMutedImageView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:src="@color/gray"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerOptions" />
+
+        <TextView
+            android:id="@+id/tvDarkMuted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="DarkMuted"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/darkMutedImageView"
+            app:layout_constraintTop_toTopOf="@+id/darkMutedImageView" />
+
+        <TextView
+            android:id="@+id/tvDarkMutedHex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="4dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/darkMutedImageView"
+            app:layout_constraintTop_toBottomOf="@id/tvDarkMuted"
+            tools:text="#FFFFFFFF" />
+
+        <ImageView
+            android:id="@+id/mutedImageView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:src="@color/gray"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/darkMutedImageView" />
+
+        <TextView
+            android:id="@+id/tvMuted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="Muted"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/mutedImageView"
+            app:layout_constraintTop_toTopOf="@+id/mutedImageView" />
+
+        <TextView
+            android:id="@+id/tvMutedHex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="4dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/mutedImageView"
+            app:layout_constraintTop_toBottomOf="@id/tvMuted"
+            tools:text="#FFFFFFFF" />
+
+        <ImageView
+            android:id="@+id/lightMutedImageView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:src="@color/gray"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/mutedImageView" />
+
+        <TextView
+            android:id="@+id/tvLightMuted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="LightMuted"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/lightMutedImageView"
+            app:layout_constraintTop_toTopOf="@+id/lightMutedImageView" />
+
+        <TextView
+            android:id="@+id/tvLightMutedHex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="4dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/lightMutedImageView"
+            app:layout_constraintTop_toBottomOf="@id/tvLightMuted"
+            tools:text="#FFFFFFFF" />
+
+        <ImageView
+            android:id="@+id/darkVibrantImageView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:src="@color/gray"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/lightMutedImageView" />
+
+        <TextView
+            android:id="@+id/tvDarkVibrant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="DarkVibrant"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/darkVibrantImageView"
+            app:layout_constraintTop_toTopOf="@+id/darkVibrantImageView" />
+
+        <TextView
+            android:id="@+id/tvDarkVibrantHex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="4dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/darkVibrantImageView"
+            app:layout_constraintTop_toBottomOf="@id/tvDarkVibrant"
+            tools:text="#FFFFFFFF" />
+
+        <ImageView
+            android:id="@+id/vibrantImageView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:src="@color/gray"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/darkVibrantImageView" />
+
+        <TextView
+            android:id="@+id/tvVibrant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="Vibrant"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/vibrantImageView"
+            app:layout_constraintTop_toTopOf="@+id/vibrantImageView" />
+
+        <TextView
+            android:id="@+id/tvVibrantHex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="4dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/vibrantImageView"
+            app:layout_constraintTop_toBottomOf="@id/tvVibrant"
+            tools:text="#FFFFFFFF" />
+
+        <ImageView
+            android:id="@+id/dominantImageView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@color/gray"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/vibrantImageView" />
+
+        <TextView
+            android:id="@+id/tvDominant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="Dominant"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/dominantImageView"
+            app:layout_constraintTop_toTopOf="@+id/dominantImageView" />
+
+        <TextView
+            android:id="@+id/tvDominantHex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="4dp"
+            android:layout_marginBottom="8dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/dominantImageView"
+            app:layout_constraintTop_toBottomOf="@id/tvDominant"
+            tools:text="#FFFFFFFF" />
+
+        <android.support.constraint.Group
+            android:id="@+id/paletteGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="tvDarkMuted,tvLightMuted,vibrantImageView,mutedImageView,darkMutedImageView,tvDarkMutedHex,tvMuted,tvDarkVibrant,tvVibrantHex,tvMutedHex,lightMutedImageView,tvVibrant,tvLightMutedHex,darkVibrantImageView,tvDarkVibrantHex,dominantImageView,tvDominant,tvDominantHex" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>

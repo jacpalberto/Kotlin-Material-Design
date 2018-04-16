@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.pc_3.kotlinmaterialdesign.recycler.RecyclerActivity">
 
     <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
@@ -11,9 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/gray"
-        app:popupTheme="@style/AppTheme.PopupOverlay"
         android:minHeight="?android:attr/actionBarSize"
-        android:transitionName="tActionBar" />
+        android:transitionName="tActionBar"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/list"
@@ -21,7 +21,10 @@
         android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize"
         android:background="@color/light_gray"
+        android:clipToPadding="false"
         android:padding="4dp"
         tools:itemCount="5"
-        tools:listitem="@layout/list_item" />
+        tools:layoutManager="GridLayoutManager"
+        tools:listitem="@layout/item_place"
+        tools:spanCount="2" />
 </android.support.constraint.ConstraintLayout>

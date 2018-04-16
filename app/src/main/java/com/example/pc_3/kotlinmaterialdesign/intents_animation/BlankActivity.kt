@@ -1,11 +1,15 @@
-package com.example.pc_3.kotlinmaterialdesign
+package com.example.pc_3.kotlinmaterialdesign.intents_animation
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.example.pc_3.kotlinmaterialdesign.GlideCircleTransform
+import com.example.pc_3.kotlinmaterialdesign.R
+import com.example.pc_3.kotlinmaterialdesign.ScreenshotDetectionActivity
+import com.example.pc_3.kotlinmaterialdesign.messages.toast
 import kotlinx.android.synthetic.main.activity_blank.*
 
-class BlankActivity : AppCompatActivity() {
+
+class BlankActivity : ScreenshotDetectionActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +24,7 @@ class BlankActivity : AppCompatActivity() {
 
     private fun loadProfileImage() {
         Glide.with(this)
-                .load(R.drawable.bebe_pp)
+                .load(R.drawable.img_bebe_small)
                 .transform(GlideCircleTransform(this))
                 .into(ivProfile)
     }
@@ -31,6 +35,14 @@ class BlankActivity : AppCompatActivity() {
         actionBar?.title = getString(R.string.toolbar_blank_title)
         actionBar?.setDisplayHomeAsUpEnabled(true)
         actionBar?.setDisplayShowHomeEnabled(true)
+    }
+
+    override fun onScreenCaptured(path: String?) {
+        path?.let { toast("Screenshot has been taken") }
+    }
+
+    override fun onScreenCapturedWithDeniedPermission() {
+        toast("Please grant read external storage permission for screenshot detection")
     }
 
     override fun finish() {

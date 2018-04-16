@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.pc_3.kotlinmaterialdesign.BlankActivity">
+    tools:context="com.example.pc_3.kotlinmaterialdesign.intents_animation.BlankActivity">
 
     <RelativeLayout
         android:id="@+id/background"
@@ -25,6 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@android:color/transparent"
+            android:transitionName="tActionBar"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
@@ -47,14 +48,16 @@
             android:fontFamily="sans-serif-light"
             android:text="Bebe Rexha"
             android:textColor="@android:color/black"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:transitionName="tProfileName" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
             android:text="musician, singer, songwriter"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:transitionName="tProfileDescription" />
     </LinearLayout>
 
     <ImageView
@@ -64,6 +67,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="220dp"
         android:scaleType="centerInside"
-        tools:src="@drawable/bebe_pp" />
+        android:transitionName="tImage"
+        tools:src="@drawable/img_bebe_small" />
 
 </RelativeLayout>

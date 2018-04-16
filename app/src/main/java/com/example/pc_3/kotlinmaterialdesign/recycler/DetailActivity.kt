@@ -55,13 +55,13 @@ class DetailActivity : AppCompatActivity() {
         addButton.setOnClickListener {
             if (!isEditTextVisible) {
                 revealEditText(revealView)
-                morphDrawable(R.drawable.icn_morph)
+                morphDrawable(R.drawable.ic_morph)
 
             } else {
                 //addToDo(todoText.text.toString())
                 //toDoAdapter.notifyDataSetChanged()
                 hideEditText(revealView)
-                morphDrawable(R.drawable.icn_morph_reverse)
+                morphDrawable(R.drawable.ic_morph_reverse)
             }
         }
     }

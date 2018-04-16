@@ -27,8 +27,8 @@ import java.util.*
 /**
  * Created by Alberto Carrillo on 22/09/2017.
  */
-var inboxStyle = NotificationCompat.InboxStyle()
-const val NOTIFICATION_ID = 237
+private var inboxStyle = NotificationCompat.InboxStyle()
+private const val NOTIFICATION_ID = 237
 private var counter = 1
 private var value = 0
 
@@ -278,28 +278,28 @@ fun getCurrentTime(): CharSequence? {
 }
 
 fun getRandomColor() = when (Random().nextInt(11 - 0) + 0) {
-        0 -> Color.BLACK
-        1 -> Color.YELLOW
-        2 -> Color.RED
-        3 -> Color.BLUE
-        4 -> Color.GRAY
-        5 -> Color.DKGRAY
-        6 -> Color.LTGRAY
-        7 -> Color.WHITE
-        8 -> Color.CYAN
-        9 -> Color.MAGENTA
-        else -> Color.TRANSPARENT
-    }
+    0 -> Color.BLACK
+    1 -> Color.YELLOW
+    2 -> Color.RED
+    3 -> Color.BLUE
+    4 -> Color.GRAY
+    5 -> Color.DKGRAY
+    6 -> Color.LTGRAY
+    7 -> Color.WHITE
+    8 -> Color.CYAN
+    9 -> Color.MAGENTA
+    else -> Color.TRANSPARENT
+}
 
 
 fun getRandomGravity() = when (Random().nextInt(9 - 0) + 0) {
-        0 -> Gravity.TOP or Gravity.START
-        1 -> Gravity.TOP or Gravity.CENTER
-        2 -> Gravity.TOP or Gravity.END
-        3 -> Gravity.CENTER or Gravity.START
-        4 -> Gravity.CENTER or Gravity.CENTER
-        5 -> Gravity.CENTER or Gravity.END
-        6 -> Gravity.BOTTOM or Gravity.START
-        7 -> Gravity.BOTTOM or Gravity.CENTER
-        else -> Gravity.BOTTOM or Gravity.END
-    }
+    0 -> Gravity.TOP or Gravity.START
+    1 -> Gravity.TOP or Gravity.CENTER
+    2 -> Gravity.TOP or Gravity.END
+    3 -> Gravity.CENTER or Gravity.START
+    4 -> Gravity.CENTER or Gravity.CENTER
+    5 -> Gravity.CENTER or Gravity.END
+    6 -> Gravity.BOTTOM or Gravity.START
+    7 -> Gravity.BOTTOM or Gravity.CENTER
+    else -> Gravity.BOTTOM or Gravity.END
+}

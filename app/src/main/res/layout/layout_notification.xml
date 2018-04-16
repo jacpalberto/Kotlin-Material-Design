@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/counterValuePanel"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    tools:background="@android:color/black">
+
+    <ImageView
+        android:id="@+id/icon_badge"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_menu_notification" />
+
+    <TextView
+        android:id="@+id/tvBadgeCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_badge"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/icon_badge"
+        app:layout_constraintTop_toTopOf="@+id/icon_badge"
+        tools:text="1" />
+</android.support.constraint.ConstraintLayout>

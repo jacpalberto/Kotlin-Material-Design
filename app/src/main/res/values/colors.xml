@@ -10,11 +10,13 @@
     <color name="dark_blue">#120cc4</color>
     <color name="blue">#0943cc</color>
     <color name="cyan">#04d1ec</color>
-    <color name="tourquese">#04ec93</color>
+    <color name="turquoise">#04ec93</color>
     <color name="green">#2bec04</color>
     <color name="yellow">#ece804</color>
     <color name="orange">#ff9b36</color>
     <color name="light_gray">#f2f2f2</color>
+    <color name="semi_white">#fafafa</color>
     <color name="gray">#b1b1b1</color>
     <color name="dark_gray">#484848</color>
+    <color name="shadow">#99323232</color>
 </resources>

@@ -3,6 +3,6 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/kotlin_ico" />
+            android:src="@drawable/ic_kotlin" />
     </item>
 </layer-list>

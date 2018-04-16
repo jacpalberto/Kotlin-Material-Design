@@ -15,7 +15,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import com.example.pc_3.kotlinmaterialdesign.R
 import com.example.pc_3.kotlinmaterialdesign.recycler.models.Place
-import kotlinx.android.synthetic.main.activity_reycler.*
+import kotlinx.android.synthetic.main.activity_recycler.*
 
 class RecyclerActivity : AppCompatActivity() {
     private lateinit var menu: Menu
@@ -24,7 +24,7 @@ class RecyclerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_reycler)
+        setContentView(R.layout.activity_recycler)
         init()
     }
 
@@ -73,22 +73,22 @@ class RecyclerActivity : AppCompatActivity() {
     }
 
     private fun getTravelList() = mutableListOf(
-            Place("Belgium", R.drawable.belgium),
-            Place("Budapest", R.drawable.budapest),
-            Place("Croatia", R.drawable.croatia),
-            Place("Frankfurt", R.drawable.frankfurt),
-            Place("Honk Kong", R.drawable.honk_kong),
-            Place("London", R.drawable.london),
-            Place("New York", R.drawable.new_york),
-            Place("Paris", R.drawable.paris),
-            Place("Rio de Janeiro", R.drawable.rio_de_janeiro),
-            Place("Rome", R.drawable.rome),
-            Place("Santorini", R.drawable.santorini),
-            Place("Sidney", R.drawable.sydney),
-            Place("Tokyo", R.drawable.tokyo),
-            Place("Toronto", R.drawable.toronto),
-            Place("Turkey", R.drawable.turkey),
-            Place("Venice", R.drawable.venice))
+            Place("Belgium", R.drawable.item_belgium),
+            Place("Budapest", R.drawable.item_budapest),
+            Place("Croatia", R.drawable.item_croatia),
+            Place("Frankfurt", R.drawable.item_frankfurt),
+            Place("Honk Kong", R.drawable.item_honk_kong),
+            Place("London", R.drawable.item_london),
+            Place("New York", R.drawable.item_new_york),
+            Place("Paris", R.drawable.item_paris),
+            Place("Rio de Janeiro", R.drawable.item_rio_de_janeiro),
+            Place("Rome", R.drawable.item_rome),
+            Place("Santorini", R.drawable.item_santorini),
+            Place("Sidney", R.drawable.item_sydney),
+            Place("Tokyo", R.drawable.item_tokyo),
+            Place("Toronto", R.drawable.item_toronto),
+            Place("Turkey", R.drawable.item_turkey),
+            Place("Venice", R.drawable.item_venice))
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.recycler_menu, menu)

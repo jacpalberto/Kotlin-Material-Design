@@ -11,15 +11,18 @@ import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Gravity
+import android.view.Menu
 import android.view.MenuItem
 import com.example.pc_3.kotlinmaterialdesign.adapters.PagerAdapter
+import com.example.pc_3.kotlinmaterialdesign.intents_animation.AnimationActivity
 import com.example.pc_3.kotlinmaterialdesign.messages.MessagesFragment
 import com.example.pc_3.kotlinmaterialdesign.recycler.RecyclerActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar_main.*
 import org.jetbrains.anko.startActivity
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, MessagesFragment.OnNotificationClicked {
+    private var notificationCounter = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppThemeLauncher)
@@ -36,7 +39,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun setupViewPager() {
-        val mFragmentList = mutableListOf(DialogsFragment(), WidgetFragment(), MessagesFragment())
+        val mFragmentList = mutableListOf(DialogsFragment(), PaletteFragment(), MessagesFragment())
         mPager.adapter = PagerAdapter(supportFragmentManager, mFragmentList)
     }
 
@@ -55,12 +58,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private fun setupToolbar() {
         setSupportActionBar(toolbar)
         val actionBar = supportActionBar
-        actionBar?.title = getString(R.string.toolbar_app_name)
+        actionBar?.title = ""
     }
 
     private fun setupTabLayout() {
         tabLayout.addTab(tabLayout.newTab().setText(R.string.dialogs))
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.widgets))
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.palette))
         tabLayout.addTab(tabLayout.newTab().setText(R.string.messages))
         mPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
@@ -115,6 +118,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main_activity, menu)
+        val item = menu.findItem(R.id.action_notifications)
+        item.icon = convertLayoutToImage(this@MainActivity,
+                notificationCounter,
+                R.drawable.ic_notifications_white_24dp)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.action_notifications) return true
+        return super.onOptionsItemSelected(item)
+    }
+
     fun getColorFromTab(position: Int) = when (position) {
         0 -> ContextCompat.getColor(this, R.color.colorPrimary)
         1 -> ContextCompat.getColor(this, R.color.purple)
@@ -127,5 +144,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         1 -> ContextCompat.getColor(this, R.color.dark_purple)
         2 -> ContextCompat.getColor(this, android.R.color.black)
         else -> ContextCompat.getColor(this, android.R.color.black)
+    }
+
+    override fun updateNotificationBadge(data: Int) {
+        notificationCounter = data
+        invalidateOptionsMenu()
     }
 }

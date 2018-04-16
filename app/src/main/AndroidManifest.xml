@@ -28,12 +28,12 @@
             android:name=".ComponentsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AnimationActivity"
+            android:name=".intents_animation.AnimationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".BlankActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait" />
+            android:name=".intents_animation.BlankActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ScrollingActivity"
             android:theme="@style/AppTheme.NoActionBarTransparent" />
@@ -43,6 +43,10 @@
         <activity
             android:name=".recycler.DetailActivity"
             android:theme="@style/AppThemeRecycler" />
+        <activity
+            android:name=".DialogActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dialog"/>
     </application>
 
 </manifest>
