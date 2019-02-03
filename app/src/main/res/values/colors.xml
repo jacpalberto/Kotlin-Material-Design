@@ -19,4 +19,5 @@
     <color name="gray">#b1b1b1</color>
     <color name="dark_gray">#484848</color>
     <color name="shadow">#99323232</color>
+    <color name="orange_shadowed">#87fabb3d</color>
 </resources>

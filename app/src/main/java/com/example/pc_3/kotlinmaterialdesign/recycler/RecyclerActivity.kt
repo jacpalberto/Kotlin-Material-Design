@@ -35,11 +35,12 @@ class RecyclerActivity : AppCompatActivity() {
 
     private fun setupToolbar() {
         setSupportActionBar(toolbar)
-        val actionBar = supportActionBar
-        actionBar?.title = getString(R.string.toolbar_recycler_title)
-        actionBar?.elevation = 7.0f
-        actionBar?.setDisplayHomeAsUpEnabled(true)
-        actionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.apply {
+            title = getString(R.string.toolbar_recycler_title)
+            elevation = 7.0f
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
     }
 
     private fun initRvList() {

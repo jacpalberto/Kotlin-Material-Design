@@ -31,10 +31,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/red"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.8"
             android:text="@string/simple_dialog"
             android:textColor="@android:color/white"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btnButtonsDialog"

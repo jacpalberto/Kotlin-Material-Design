@@ -113,6 +113,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.menu_recycler -> {
                 startActivity<RecyclerActivity>()
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
+            }R.id.menu_circular -> {
+                startActivity<CircularConstraintActivity>()
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
             }
         }
         return true

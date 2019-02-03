@@ -23,12 +23,8 @@ class ScreenshotDetectionDelegate(activityWeakReference: Activity, private val l
             super.onChange(selfChange, uri)
             if (isReadExternalStoragePermissionGranted) {
                 val path = getFilePathFromContentResolver(activityWeakReference, uri)
-                if (isScreenshotPath(path)) {
-                    onScreenCaptured(path)
-                }
-            } else {
-                onScreenCapturedWithDeniedPermission()
-            }
+                if (isScreenshotPath(path)) onScreenCaptured(path)
+            } else onScreenCapturedWithDeniedPermission()
         }
     }
 

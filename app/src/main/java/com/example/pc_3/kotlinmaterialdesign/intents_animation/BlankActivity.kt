@@ -31,10 +31,11 @@ class BlankActivity : ScreenshotDetectionActivity() {
 
     private fun setupToolBar() {
         setSupportActionBar(toolbar)
-        val actionBar = supportActionBar
-        actionBar?.title = getString(R.string.toolbar_blank_title)
-        actionBar?.setDisplayHomeAsUpEnabled(true)
-        actionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.apply {
+            title = getString(R.string.toolbar_blank_title)
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
     }
 
     override fun onScreenCaptured(path: String?) {

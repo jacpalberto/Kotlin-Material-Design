@@ -51,7 +51,7 @@ class PaletteFragment : Fragment() {
 
     @SuppressLint("SetTextI18n")
     private fun setPaletteColors() {
-        val drawable = paletteImageView!!.drawable as BitmapDrawable
+        val drawable = paletteImageView?.drawable as BitmapDrawable
         val bitmap2 = drawable.bitmap
         Palette.from(bitmap2).generate { palette ->
             val default = ContextCompat.getColor(context!!, android.R.color.black)

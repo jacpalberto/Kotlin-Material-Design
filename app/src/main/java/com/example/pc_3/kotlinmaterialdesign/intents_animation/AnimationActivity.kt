@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter
 import android.animation.ValueAnimator
 import android.app.ActivityOptions
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.graphics.PorterDuff
 import android.os.Bundle
 import android.os.Handler
@@ -19,6 +20,7 @@ import android.view.View
 import android.view.ViewAnimationUtils
 import android.view.Window
 import com.bumptech.glide.Glide
+import com.example.pc_3.kotlinmaterialdesign.ConstraintSetActivity
 import com.example.pc_3.kotlinmaterialdesign.GlideCircleTransform
 import com.example.pc_3.kotlinmaterialdesign.R
 import kotlinx.android.synthetic.main.activity_animation.*
@@ -26,10 +28,6 @@ import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.noAnimation
 import org.jetbrains.anko.sdk15.listeners.onClick
 import org.jetbrains.anko.startActivity
-import android.opengl.ETC1.getWidth
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable
-import android.graphics.BitmapFactory
-import android.graphics.Bitmap
 
 
 class AnimationActivity : AppCompatActivity() {
@@ -50,6 +48,7 @@ class AnimationActivity : AppCompatActivity() {
         btnInstant.onClick { startActivity(intentFor<BlankActivity>().noAnimation()) }
         btnRegular.onClick { startActivity<BlankActivity>() }
         btnToDown.onClick { startTransitionBlankActivity(R.anim.slide_from_top, R.anim.slide_to_down) }
+        btnConstraint.onClick { startActivity<ConstraintSetActivity>() }
         btnExplode.onClick {
             window.exitTransition = Explode()
             val options = ActivityOptions.makeSceneTransitionAnimation(this).toBundle()

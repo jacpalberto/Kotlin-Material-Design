@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/menu_standard"
+        android:id="@+id/menu_toolbars"
         android:icon="@android:drawable/ic_dialog_alert"
         android:title="@string/standard" />
     <item
@@ -12,6 +12,11 @@
         android:id="@+id/menu_scrolling"
         android:icon="@android:drawable/ic_lock_idle_alarm"
         android:title="@string/scrolling"
+        android:visible="true" />
+    <item
+        android:id="@+id/menu_circular"
+        android:icon="@android:drawable/ic_lock_idle_alarm"
+        android:title="@string/circular_constraint"
         android:visible="true" />
     <item
         android:id="@+id/menu_activity_animations"

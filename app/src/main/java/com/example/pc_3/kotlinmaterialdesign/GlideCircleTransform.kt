@@ -9,7 +9,6 @@ import com.bumptech.glide.load.resource.bitmap.BitmapTransformation
  * Created by Alberto Carrillo on 2/14/18.
  */
 class GlideCircleTransform(context: Context) : BitmapTransformation(context) {
-
     override fun transform(pool: BitmapPool, toTransform: Bitmap, outWidth: Int, outHeight: Int): Bitmap? {
         return circleCrop(pool, toTransform)
     }

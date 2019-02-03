@@ -133,8 +133,8 @@ class DialogsFragment : Fragment() {
             val btnBottomDialogOk = dialogView?.findViewById<View>(R.id.btn_dialog_bottom_sheet_ok)
             val btnBottomDialogCancel = dialogView?.findViewById<View>(R.id.btn_dialog_bottom_sheet_cancel)
             mBottomSheetDialog.setContentView(dialogView)
-            btnBottomDialogOk?.setOnClickListener({ mBottomSheetDialog.dismiss() })
-            btnBottomDialogCancel?.setOnClickListener({ mBottomSheetDialog.dismiss() })
+            btnBottomDialogOk?.onClick { mBottomSheetDialog.dismiss() }
+            btnBottomDialogCancel?.onClick { mBottomSheetDialog.dismiss() }
             mBottomSheetDialog.show()
         }
 
@@ -142,7 +142,7 @@ class DialogsFragment : Fragment() {
             val fullscreenDialog = Dialog(context, R.style.DialogFullscreen)
             fullscreenDialog.setContentView(R.layout.dialog_fullscreen)
             val ivClose = fullscreenDialog.findViewById<View>(R.id.img_dialog_fullscreen_close)
-            ivClose.setOnClickListener({ fullscreenDialog.dismiss() })
+            ivClose.onClick { fullscreenDialog.dismiss() }
             fullscreenDialog.show()
         }
 
@@ -163,47 +163,4 @@ class DialogsFragment : Fragment() {
                 .into(ivProfile)
     }
 
-    fun arithmeticExpression(a: Int, b: Int, c: Int) = (a - b == c) || (a + b == c) || (a * b == c) ||
-            (a.toDouble() / b.toDouble() == c.toDouble())
-
-    fun tennisSet(score1: Int, score2: Int) =
-            (Math.min(score1, score2) < 5 && Math.max(score1, score2) == 6) ||
-                    (Math.min(score1, score2) >= 5 && Math.max(score1, score2) == 7)
-                    && score1 != score2
-
-    fun arrayPacking(a: MutableList<Int>) = a.map { it.toString(2).padStart(8, '0') }.reversed().joinToString("").toInt(2)
-
-    fun rangeBitCount(a: Int, b: Int) = (a..b).toMutableList()
-            .joinToString("") { it.toString(2) }
-            .count { it == '1' }
-
-    fun rangeBitCo1unt(a: Int, b: Int) = (a..b).toMutableList()
-            .map { it.toString(2) }
-            .map {
-                it.map { Integer.parseInt("$it") }
-                        .reduce { acc, c -> acc + c }
-            }
-            .reduce { acc, c -> acc + c }
-
-    fun mirrorBits(a: Int) = a.toString(2).reversed()
-
-    fun leastFactorial(n: Int): Int {
-        var factorial = 1
-        var counter = 1
-        while (factorial < n) factorial *= counter++
-        return factorial * counter
-    }
-
-    fun countSumOfTwoRepresentations2(n: Int, l: Int, r: Int) =
-            (l..r).count { n - it in (l + (it - l)..r) }
-
-    fun magicalWell(a: Int, b: Int, n: Int) = (0 until n).map { (a + it) * (b + it) }.sum()
-
-    fun additionWithoutCarrying(n1: Int, n2: Int) = n1.toString().padStart(Math.max(n1.toString().length, n2.toString().length), '0').zip(n2.toString().padStart(Math.max(n1.toString().length, n2.toString().length), '0')).map { ("${it.first}".toInt() + "${it.second}".toInt()).toString().last() }.joinToString("").toInt()
-
-    fun helloWorld() : String {
-        return "helloWorld"
-    }
-
-    fun hello() = "hello"
 }
